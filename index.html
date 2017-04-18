@@ -21,14 +21,14 @@
 		.header {
 			position: fixed;
 			z-index: 9999;
-			width: 100%;
+			width: 1440px;
 			height: 80px;
 			background-color: #fff;
 			opacity: 0.9;
 			display: flex;
 			justify-content: space-between;
 			box-shadow: #8C9bA5 0 0 3px 1px;
-			position: relative;
+			
 		}
 
 		.header .logo {
@@ -54,10 +54,14 @@
 			text-align: right;
 		}
 
+		.header ul li:nth-child(1) a {
+			color: #000;
+		}
+
 		.header ul li a {
 			color: #555;
 			text-decoration: none;
-			font-family: 'SourceSansPro-Regular';
+			font-family: 'SourceSansPro-Bold';
 			display: inline-block;
 			height: 60px;
 		}
@@ -151,6 +155,7 @@
 			height: 400px;
 			margin-bottom: 40px;
 			position: relative;
+			background-size: cover;
 		}
 
 		.work .img-cover{
@@ -354,13 +359,8 @@
 					<h2>Welcome to my portfolio.</h2>
 					<p>I am Sophia, an UX designer who is passionate about solving problems <br> and creating a positive and nature user experience through design.</p>
 					<span class="btn">
-						<a target="_blank" href="#">
-							<button class="pri-btn">VIEW WORKS</button>
-						</a>
-
-						<a target="_blank" href="#">
-							<button class="sec-btn">CONTACT ME</button>
-							</a>
+						<button class="pri-btn" target="_blank">VIEW WORKS</button>
+						<button class="sec-btn" target="_blank">CONTACT ME</button>
 					</span>
 				</div>
 			</div>
