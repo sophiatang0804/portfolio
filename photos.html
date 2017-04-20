@@ -194,6 +194,30 @@
 			background: url(./images/pic9.jpg) no-repeat;
 		}
 
+		.back-to-top {
+			position: fixed;
+			width:70px;
+			height: 70px;
+			border-radius: 35px;
+			background: #f5f7fa;
+			margin: 0 auto;
+			color: #000;
+			text-align: center;
+			line-height: 20px;
+			bottom: 200px;
+			left: calc(50% - 35px);
+			opacity: 0;
+    		transition: all 1s;
+		}
+
+		.back-to-top-show {
+			opacity: 1;
+		}
+
+		.back-to-top img {
+			margin-top: 20px;
+		}
+
 		.footer {
 			width: 100%;
 			height: 100px;
@@ -204,7 +228,7 @@
 		}
 
 		.rule {
-			margin: 0 auto;
+			margin: 40px auto;
 			width: 1280px;
 			height: 2px;
 			background-color: #D8D8D8; 
@@ -298,6 +322,21 @@
 
 	</style>
 
+	<script type="text/javascript">
+		function backtotop() {
+			window.scroll(0, 0)
+			}
+
+		window.onscroll = function(){
+			if(window.scrollY > 1200) {
+				document.getElementsByClassName('back-to-top')[0].className += ' back-to-top-show';
+			} else {
+				document.getElementsByClassName('back-to-top')[0].className = 'back-to-top';
+			}
+			
+		}
+	</script>
+
 </head>
 <body>
 	<div class="container">
@@ -371,6 +410,10 @@
 					</div>		
 				</div>
 			</div>
+			<div class="back-to-top" onclick ="backtotop();">
+				<img src="./images/icons/back-to-top.svg">
+				<div>Top</div>
+				</div>
 			<div class="rule"></div>
 			<div class="footer">
 				<p>All works © Sophia Tang 2017.</p>
