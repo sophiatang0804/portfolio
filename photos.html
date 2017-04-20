@@ -21,19 +21,19 @@
 		.header {
 			position: fixed;
 			z-index: 9999;
-			width: 1440px;
-			height: 80px;
+			width: 100%;
+			max-width: 1440px;
+			height: 100px;
 			background-color: #fff;
 			opacity: 0.9;
 			display: flex;
 			justify-content: space-between;
-			box-shadow: #8C9bA5 0 0 3px 1px;
-			
+			/*box-shadow: #8C9bA5 0 0 3px 1px;*/
 		}
 
 		.header .logo {
 			font-family: 'SourceSansPro-Bold', helvetica;
-			line-height: 80px;
+			line-height: 100px;
 			padding-left: 10%;
 		}
 
@@ -49,32 +49,32 @@
 		.header ul li {
 			display: inline-block;
 			width: 70px;
-			height: 80px;
-			line-height: 80px;
+			height: 100px;
+			line-height: 100px;
 			text-align: right;
 		}
 
-		.header ul li:nth-child(1) a {
+		.header ul li:nth-child(3) a {
 			color: #000;
+			border-bottom: 3px solid #000;
 		}
 
 		.header ul li a {
 			color: #555;
 			text-decoration: none;
-			font-family: 'SourceSansPro-Light';
+			font-family: 'SourceSansPro-Regular';
 			display: inline-block;
-			height: 60px;
+			height: 70px;
 		}
 
 		.header ul li a:hover {
 			color: #000;
-			border-bottom: 3px solid #000;
+			/*border-bottom: 3px solid #000;*/
 		}
-
 
 		.content {
 			width: 100%;
-			background-color: #f5f7fa;
+			background-color: #fff;
 		}
 
 		.content .works {
@@ -148,10 +148,6 @@
 			opacity: 0;
 		}
 
-		/*.work:hover .img-text {
-			opacity: 1;
-		}*/
-
 		.work:hover .work-name {
 			opacity: 1;
 		}
@@ -219,14 +215,15 @@
 		}
 
 		.contact .social-media {
-			width: 350px;
+			width: 240px;
 			display: flex;
 			justify-content: space-between;
+			margin: 0 auto;
 		}
 
 		.contact .social-media img {
-			width: 40px;
-			height: 40px;
+			width: 32px;
+			height: 32px;
 			opacity: 1;
 		}
 
@@ -299,7 +296,7 @@
 
 			.header img {
 				position: absolute;
-				top: 29.5px;
+				top: 39.5px;
 				right: 10%;
 				width: 30px;
 				height: 21px;
