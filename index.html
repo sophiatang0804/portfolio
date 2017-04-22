@@ -37,7 +37,7 @@
 		}
 
 		.header img {
-			opacity: 0;
+			display: none;
 		}
 
 		.header ul {
@@ -78,7 +78,7 @@
 			position: relative;
 		}
 
-		.banner .textArea {
+		.banner .text-area {
 			padding: 200px 140PX;
 			z-index: 2;
 			position: absolute;
@@ -102,7 +102,7 @@
 			margin-bottom: 40px;
 		}
 
-		.banner .textArea .pri-btn {
+		.banner .text-area .pri-btn {
 			padding: 10px 30px;
 			border: 2px solid #000;
 			text-decoration: none;
@@ -114,12 +114,12 @@
 			color: #fff;
 		}
 
-		.banner .textArea .pri-btn:hover {
+		.banner .text-area .pri-btn:hover {
 			background-color: rgb(80,95,72);
 			border: 2px solid rgb(80,95,72);
 		}
 
-		.banner .textArea .sec-btn {
+		.banner .text-area .sec-btn {
 			padding: 10px 30px;
 			border: 2px solid #000;
 			color: #000;
@@ -131,7 +131,7 @@
 			margin-right: 10px;
 		}
 
-		.banner .textArea .sec-btn:hover {
+		.banner .text-area .sec-btn:hover {
 			background-color: #000;
 			color: #fff;
 		}
@@ -156,7 +156,6 @@
 			width: 1160px;
 			height: 2px;
 			background-color: #D8D8D8; 
-
 		}
 
 		.content {
@@ -178,7 +177,7 @@
 			height: 270px;
 			margin-bottom: 120px;
 			position: relative;
-			/*background-size: cover;*/
+			background-size: cover;
 		}
 
 		.work .img-cover{
@@ -319,7 +318,6 @@
 			opacity: 0.6;
 		}
 
-
 		.footer p {
 			color: #000;
 			font-size: 14px;
@@ -327,51 +325,83 @@
 			line-height: 20px;
 		}
 
-		@media screen and (min-width: 1280px) and (max-width: 1439px) {
-			.content .works {
-			width: 1160px;
+		@media screen and (min-width: 1200px) and (max-width: 1439px) {
+			body {
+				background-color: #F7C7C7;
 			}
+
+			.header .logo {
+			padding-left: 140px;
+			}
+
+			.content .works {
+			width: 1100px;
+			}
+
 			.content .works .work {
-			width: 360px;
-			height: 360px;
+			width: 340px;
+			height: 340px;
+			}
+
+			.motto .rule {
+			width: 1100px;
 			}
 		}
 
-		@media screen and (min-width: 1024px) and (max-width: 1279px) {
+		@media screen and (min-width: 992px) and (max-width: 1119px) {
+			body {
+				background-color: #DDEDED;
+			}
 
 			.content .works {
-			width: 980px;
+			width: 920px;
 			}
+
 			.content .works .work {
-			width: 300px;
-			height: 300px;
+			width: 280px;
+			height: 280px;
+			}
+
+			.motto .rule {
+			width: 920px;
 			}
 		}
 
-		@media screen and (min-width: 768px) and (max-width: 1023px) {
+		@media screen and (min-width: 768px) and (max-width: 991px) {
+			body {
+				background-color: #FEE4D6;
+			}
+
 			.content .works {
-			width: 740px;
+			width: 680px;
 			}
 
 			.content .works .work {
-			width: 350px;
-			height: 350px;
+			width: 320px;
+			height: 320px;
+			}
+
+			.motto .rule {
+			width: 680px;
 			}
 		}
 
-		@media screen and (min-width: 320px) and ( max-width: 767px) {
-			.content .works {
-			width: 400px;
+		@media screen and (min-width: 414px) and (max-width: 767px) {
+			body {
+				background-color: #FEE4D6;
+				max-width: 767px;
 			}
 
-			.content .works .work {
-			width: 400px;
-			height: 400px;
+			.header {
+				width: 100%;
+			}
+
+			.header .logo {
+				padding-left: 10%;
 			}
 
 			.header ul {
-			width: 70px;
-			opacity: 0;
+			display: none;
 			}
 
 			.header img {
@@ -380,7 +410,97 @@
 				right: 10%;
 				width: 30px;
 				height: 21px;
-				opacity: 1;
+				display: block;
+			}
+
+			.banner .text-area {
+				padding-left: 10%
+			}
+
+			.motto .rule {
+			width: 350px;
+			}
+
+			.motto p {
+				width: 350px;
+			}
+
+			.contact .contact-me {
+			width: 410px;
+			}
+
+			.content .works {
+			width: 350px;
+			}
+
+			.content .works .work {
+			width: 350px;
+			height: 350px;
+			}
+
+			
+
+			
+		}
+
+		@media screen and (min-width: 320px) and ( max-width: 413px) {
+			body {
+				background-color: #C6DAB8;
+				max-width: 413px;
+			}
+
+			.header {
+				width: 100%;
+			}
+
+			.header .logo {
+			padding-left: 10%;
+			}
+
+			.header ul {
+			display: none;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
+
+			.banner .text-area {
+				padding-left: 10%;
+			}
+
+			.banner .text-area p {
+				display: none;
+			}
+
+			.motto p {
+				width: 320px;
+			}
+
+			.motto .rule {
+			width: 320px;
+			}
+
+			.content .works {
+			width: 320px;
+			}
+
+			.content .works .work {
+			width: 290px;
+			height: 290px;
+			}
+
+			.contact .contact-me {
+			width: 300px;
+			}
+
+			.contact .contact-me .email {
+			font-size: 20px;
 			}
 		}
 
@@ -404,7 +524,7 @@
 
 		<div class="main">
 			<div class="banner">
-				<div class="textArea">
+				<div class="text-area">
 					<h1>Hi, there!</h1>
 					<h2>Welcome to my portfolio.</h2>
 					<p>I am Sophia, an UX designer who is passionate about solving problems and creating a positive and nature user experience through design.</p>
