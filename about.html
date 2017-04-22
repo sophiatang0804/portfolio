@@ -16,9 +16,11 @@
 			width: 100%;
 			max-width: 1440px;
 			margin: 0 auto;
+			background: url(./images/plant01.png) no-repeat 80% 0;
+			background-size: contain;
 		}
 
-				.header {
+		.header {
 			position: fixed;
 			z-index: 9999;
 			width: 100%;
@@ -37,7 +39,7 @@
 		}
 
 		.header img {
-			opacity: 0;
+			display: none;
 		}
 
 		.header ul {
@@ -71,7 +73,7 @@
 
 		.content {
 			width: 100%;
-			background-color: #fff;
+			/*background-color: #fff;*/
 		}
 
 		.content .about {
@@ -85,18 +87,18 @@
 			width: 760px;
 		}
 
-		.content .about .profile {
+		/*.content .about .profile {
 			width: 760px;
 			height: 505px;
 			margin: 0 auto;
 			background: url(./images/profile2.jpg) no-repeat;
 			background-size: contain;
-		}
+		}*/
 
 		.content .about .about-text {
 			width: 760px;
 			margin-left: 200px;
-			margin-bottom: 60px;
+			margin-bottom: 30px;
 		}
 
 		.content .about .about-text h1 {
@@ -104,27 +106,7 @@
 			font-size: 60px;
 		}
 
-		.back-to-top {
-			position: fixed;
-			width:70px;
-			height: 70px;
-			border-radius: 35px;
-			background: #f5f7fa;
-			margin: 0 auto;
-			color: #000;
-			text-align: center;
-			line-height: 20px;
-			bottom: 200px;
-			left: calc(50% - 35px);
-			opacity: 0;
-    		transition: all 1s;
-		}
-
-		.back-to-top-show {
-			opacity: 1;
-		}
-
-		.back-to-top img {
+		.content .about .about-text p {
 			margin-top: 20px;
 		}
 
@@ -134,7 +116,6 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
-			/*background-color: #555;*/
 		}
 
 		.footer p {
@@ -239,6 +220,7 @@
 	</script>
 
 </head>
+
 <body>
 	<div class="container">
 		<div class="header">
@@ -259,22 +241,14 @@
 					<div class="about-text">
 						<h1 >Hey y'all.</h1>
 						<h1 >Nice to virtually <br>meet you!</h1>
-						<br>
-						<br>
-						<p >I’m <b>Sophia Tang</b>, a UX designer based in Shanghai, China. I am a passionate problem-solver, able to empathize with users and turn that empathy into design insight, synthesize the art of the possible to come up with ways to delight our users. Also I'm a keen amateur photographer.
-						<br>
-						<br>
-						Graduated from Hong Kong Polytechnic University, where I received my Master of Design in Interaction Design. Currently I am working as a user experience designer at IBM, designing enterprise software for cloud-based IaaS ans PaaS products. 
-						<br>
-						<br>
-						More information about my career and competencies can be found on my <a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank">Linkin</a> profile. Or download my full <a href="">resume</a> here.</p>	
+						<p>I’m <b>Sophia Tang</b>, a UX designer based in Shanghai, China. I am a passionate problem-solver, able to empathize with users and turn that empathy into design insight, synthesize the art of the possible to come up with ways to delight our users. Also I'm a keen amateur photographer.</p>
+						<p>Graduated from Hong Kong Polytechnic University, where I received my Master of Design in Interaction Design. Currently I am working as a user experience designer at IBM, designing enterprise software for cloud-based IaaS ans PaaS products.</p> 
+						<p>More information about my career and competencies can be found on my <a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank">Linkin</a> profile.</p>
+						<p>If you'd like to discuss freelancing, a collaboration or any other exciting opportunities, feel free to reach out to me via <b>sophia.tang0804@gmail.com</b>.</p>	
 					</div>
 				</div>
 			</div>
-			<div class="back-to-top" onclick ="backtotop();">
-				<img src="./images/icons/back-to-top.svg">
-				<div>Top</div>
-				</div>
+
 			<div class="footer">
 				<p>All works © Sophia Tang 2017.</p>
 				<div class="contact-me">
