@@ -18,7 +18,7 @@
 			margin: 0 auto;
 		}
 
-				.header {
+		.header {
 			position: fixed;
 			z-index: 9999;
 			width: 100%;
@@ -37,7 +37,7 @@
 		}
 
 		.header img {
-			opacity: 0;
+			display: none;
 		}
 
 		.header ul {
@@ -85,7 +85,7 @@
 
 		.content .works .work {
 			width: 360px;
-			height: 267px;
+			height: 360px;
 			margin-bottom: 40px;
 			position: relative;
 			background-size: cover;
@@ -106,12 +106,12 @@
 		.work .work-name {
 			width: 100%;
 			height: 100%;
-			line-height: 380px;
+			line-height: 360px;
 			text-align: center;
 			position: absolute;
 			top: 0;
 			left: 0;
-			font-size: 40px;
+			font-size: 36px;
 			color: #555;
 			font-family: 'SourceSansPro-Regular';
 			opacity: 0;
@@ -159,11 +159,9 @@
 			background: url(./images/pic5.jpg) no-repeat;
 		}
 
-
 		.works .work6 {
 			background: url(./images/pic6.jpg) no-repeat;
 		}
-
 
 		.works .work7 {
 			background: url(./images/pic7.jpg) no-repeat;
@@ -205,9 +203,8 @@
 			width: 100%;
 			height: 100px;
 			display: flex;
-			flex-direction: row;
+			flex-direction: row-reverse;
 			justify-content: space-between;
-			/*background-color: #555;*/
 		}
 
 		.footer p {
@@ -237,51 +234,54 @@
 			opacity: 0.6;
 		}
 
-		@media screen and (min-width: 1280px) and (max-width: 1439px) {
+		@media screen and (min-width: 1200px) and (max-width: 1439px) {
 			.content .works {
-			width: 1160px;
+				width: 1100px;
 			}
 			.content .works .work {
-			width: 360px;
-			height: 360px;
+				width: 340px;
+				height: 340px;
 			}
 		}
 
-		@media screen and (min-width: 1024px) and (max-width: 1279px) {
+		@media screen and (min-width: 992px) and (max-width: 1199px) {
 
 			.content .works {
-			width: 980px;
+				width: 920px;
 			}
 			.content .works .work {
-			width: 300px;
-			height: 300px;
+				width: 280px;
+				height: 280px;
 			}
 		}
 
-		@media screen and (min-width: 768px) and (max-width: 1023px) {
+		@media screen and (min-width: 768px) and (max-width: 991px) {
 			.content .works {
-			width: 740px;
+				width: 680px;
 			}
 
 			.content .works .work {
-			width: 350px;
-			height: 350px;
+				width: 320px;
+				height: 320px;
 			}
 		}
 
-		@media screen and (min-width: 320px) and ( max-width: 767px) {
+		@media screen and (min-width: 414px) and (max-width: 767px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
 			.content .works {
-			width: 400px;
+				width: 350px;
 			}
 
 			.content .works .work {
-			width: 400px;
-			height: 400px;
+				width: 350px;
+				height: 350px;
 			}
 
 			.header ul {
-			width: 70px;
-			opacity: 0;
+				display: none;
 			}
 
 			.header img {
@@ -290,7 +290,60 @@
 				right: 10%;
 				width: 30px;
 				height: 21px;
-				opacity: 1;
+				display: block;
+			}
+			.footer {
+				display: block;
+			}
+
+			.footer p {
+				padding-left: 0;
+				line-height: 60px;
+			}
+
+			.footer .social-media {
+				margin: 0 auto;
+			}
+		}
+
+		@media screen and (min-width: 320px) and ( max-width: 413px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.content .works {
+				width: 290px;
+			}
+
+			.content .works .work {
+				width: 290px;
+				height: 290px;
+			}
+
+			.header ul {
+				display: none;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
+
+			.footer {
+				display: block;
+			}
+
+			.footer p {
+				padding-left: 0;
+				line-height: 60px;
+			}
+
+			.footer .social-media {
+				margin: 0 auto;
 			}
 		}
 
@@ -387,16 +440,14 @@
 				<div>Top</div>
 				</div>
 			<div class="footer">
+				<div class="social-media">
+					<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
+					<a href=""><img src="./images/icons/Dribbble.svg" target="_blank"/></a>
+					<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
+					<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
+					<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
+				</div> 
 				<p>All works © Sophia Tang 2017.</p>
-				<div class="contact-me">
-					<span class="social-media">
-						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
-						<a href=""><img src="./images/icons/Dribbble.svg" target="_blank"/></a>
-						<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
-						<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
-						<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
-					</span> 
-				</div>
 			</div>
 		</div>		
 	</div>
