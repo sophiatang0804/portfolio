@@ -86,18 +86,9 @@
 			width: 760px;
 		}
 
-		/*.content .about .profile {
-			width: 760px;
-			height: 505px;
-			margin: 0 auto;
-			background: url(./images/profile2.jpg) no-repeat;
-			background-size: contain;
-		}*/
-
 		.content .about .about-text {
 			width: 760px;
-			margin-left: 200px;
-			margin-bottom: 30px;
+			margin: 0 auto 30px auto;
 		}
 
 		.content .about .about-text h1 {
@@ -113,7 +104,7 @@
 			width: 100%;
 			height: 100px;
 			display: flex;
-			flex-direction: row;
+			flex-direction: row-reverse;
 			justify-content: space-between;
 		}
 
@@ -148,11 +139,17 @@
 			.content .about {
 				width: 1100px;
 			}
+			.content .about .about-text {
+				width: 720px;
+			}
 		}
 
 		@media screen and (min-width: 992px) and (max-width: 1199px) {
 			.content .about {
 				width: 920px;
+			}
+			.content .about .about-text {
+				width: 600px;
 			}
 		}
 
@@ -160,17 +157,82 @@
 			.content .about {
 				width: 680px;
 			}
+			.content .about .about-text {
+				width: 440px;
+			}
 		}
 
 		@media screen and (min-width: 414px) and ( max-width: 767px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.header ul {
+				display: none;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
 			.content .about {
 				width: 350px;
+			}
+			.content .about .about-text {
+				width: 350px;
+			}
+			.footer {
+				display: block;
+			}
+
+			.footer p {
+				padding-left: 0;
+				line-height: 60px;
+			}
+
+			.footer .social-media {
+				margin: 0 auto;
 			}
 		}
 
 		@media screen and (min-width: 320px) and ( max-width: 413px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.header ul {
+				display: none;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
 			.content .about {
 				width: 290px;
+			}
+			.content .about .about-text {
+				width: 290px;
+			}
+			.footer {
+				display: block;
+			}
+
+			.footer p {
+				padding-left: 0;
+				line-height: 60px;
+			}
+
+			.footer .social-media {
+				margin: 0 auto;
 			}
 		}
 
@@ -209,20 +271,18 @@
 			<div class="content">
 				<div class="about">
 				    <div class="whiteblank"></div>
-					<!-- <div class="profile"></div> -->
 					<div class="about-text">
 						<h1 >Hey y'all.</h1>
 						<h1 >Nice to virtually <br>meet you!</h1>
 						<p>I’m <b>Sophia Tang</b>, a UX designer based in Shanghai, China. I am a passionate problem-solver, able to empathize with users and turn that empathy into design insight, synthesize the art of the possible to come up with ways to delight our users. Also I'm a keen amateur photographer.</p>
 						<p>Graduated from Hong Kong Polytechnic University, where I received my Master of Design in Interaction Design. Currently I am working as a user experience designer at IBM, designing enterprise software for cloud-based IaaS ans PaaS products.</p> 
-						<p>More information about my career and competencies can be found on my <a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank">Linkin</a> profile.</p>
+						<p>More information about my career and competencies can be found on my <a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><b>Linkin</b></a> profile.</p>
 						<p>If you'd like to discuss freelancing, a collaboration or any other exciting opportunities, feel free to reach out to me via <b>sophia.tang0804@gmail.com</b>.</p>	
 					</div>
 				</div>
 			</div>
 
 			<div class="footer">
-				<p>All works © Sophia Tang 2017.</p>
 				<div class="contact-me">
 					<span class="social-media">
 						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
@@ -232,6 +292,7 @@
 						<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
 					</span> 
 				</div>
+				<p>All works © Sophia Tang 2017.</p>
 			</div>
 		</div>		
 	</div>
