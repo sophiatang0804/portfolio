@@ -33,7 +33,7 @@
 		.header .logo {
 			font-family: 'SourceSansPro-Bold', helvetica;
 			line-height: 100px;
-			padding-left: 10%;
+			padding-left: 140px;
 		}
 
 		.header img {
@@ -42,15 +42,14 @@
 
 		.header ul {
 			list-style-type: none;
-			padding-right: 10%;
+			padding-right: 140px;
 		}
 
 		.header ul li {
 			display: inline-block;
-			width: 70px;
 			height: 100px;
 			line-height: 100px;
-			text-align: right;
+			padding-left: 40px;
 		}
 
 		.header ul li:nth-child(1) a {
@@ -70,14 +69,19 @@
 			color: #000;
 		}
 
-
 		.banner {
 			width: 100%;
-			height: 600px;
+			height: 700px;
 			background: url(./images/bg.png) no-repeat 50%;
 			background-color: #f5f7fa;
 			z-index: 1;
 			position: relative;
+		}
+
+		.banner .textArea {
+			padding: 200px 140PX;
+			z-index: 2;
+			position: absolute;
 		}
 
 		.banner h1 {
@@ -92,20 +96,14 @@
 		}
 
 		.banner p {
-			max-width: 550px;
-			font-size: 18px;
+			max-width: 600px;
+			font-size: 20px;
 			font-family: 'SourceSansPro-Regular';
 			margin-bottom: 40px;
 		}
 
-		.banner .textArea {
-			padding: 160px 10%;
-			z-index: 2;
-			position: absolute;
-		}
-
 		.banner .textArea .pri-btn {
-			padding: 10px 20px;
+			padding: 10px 30px;
 			border: 2px solid #000;
 			text-decoration: none;
 			font-size: 16px;
@@ -122,7 +120,7 @@
 		}
 
 		.banner .textArea .sec-btn {
-			padding: 10px 20px;
+			padding: 10px 30px;
 			border: 2px solid #000;
 			color: #000;
 			background: transparent;
@@ -138,23 +136,46 @@
 			color: #fff;
 		}
 
+		.motto {
+			width: 100%;
+		}
+
+		.motto p {
+			padding-top: 80px;
+			padding-bottom: 80px;
+			font-size: 32px;
+			line-height: 44px;
+			font-family: 'SourceSansPro-Light';
+			width: 500px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.motto .rule {
+			margin: 0 auto;
+			width: 1160px;
+			height: 2px;
+			background-color: #D8D8D8; 
+
+		}
+
 		.content {
 			width: 100%;
 			background-color: #fff;
 		}
 
 		.content .works {
-			width: 1280px;
+			width: 1160px;
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
 			margin: 0 auto;
-			padding: 100px 0 60px 0;
+			padding: 100px 0 0 0;
 		}
 
 		.content .works .work {
-			width: 400px;
-			height: 300px;
+			width: 360px;
+			height: 270px;
 			margin-bottom: 120px;
 			position: relative;
 			/*background-size: cover;*/
@@ -163,6 +184,13 @@
 		.work .img-cover{
 			width: 100%;
 			height: 100%;
+		}
+
+		.work:hover .img-cover {
+			background: #fff;
+			box-shadow: #8C9bA5 0 0 20px 2px;
+			opacity: 0.8;
+			transition: all, 1s;
 		}
 
 		.work .work-name {
@@ -203,59 +231,97 @@
 			background: #f5f7fa;
 		}
 
-
 		.works .work6 {
 			background: #f5f7fa;
+		}
+
+		.works .work7 {
+			background: #f5f7fa;
+		}
+
+		.works .work8 {
+			background: #f5f7fa;
+		}
+
+		.works .work9 {
+			background: #f5f7fa;
+		}
+
+		.content .btn {
+			display: block;
+			width: 138px;
+			height: 44px;
+			border: 2px solid #000;
+			color: #000;
+			background: transparent;
+			text-decoration: none;
+			font-size: 16px;
+			font-family: 'SourceSansPro-Light';
+			cursor: pointer;
+			margin: 0 auto 100px auto;
+		}
+
+		.content .btn:hover {
+			background-color: #000;
+			color: #fff;
 		}
 
 		.contact {
 			font-family: 'SourceSansPro-Regular';
 			height: 400px;
-			background: url(./images/plant.png) no-repeat 95% 25%;
+			background: url(./images/plant.png) no-repeat 70% 10%;
+			background-color: #F6F6F6;
 		}
 
 		.contact .contact-me {
-			width: 350px;
-			padding-top: 90px;
+			width: 600px;
+			padding-top: 60px;	
 			text-align: center;
-			line-height: 30px;
 			margin: 0 auto;
 		}
 
 		.contact .contact-me p {
-			font-family: 'SourceSansPro-Regular';
-			font-size: 20px;
-			padding-bottom: 30px;
+			margin-top: 20px;
+			font-size: 24px;
+			font-family: 'SourceSansPro-Light';
+			line-height: 36px;
 		}
 
-		.contact .social-media {
+		.contact .contact-me .email {
+			margin: 40px;
+			font-size: 24px;
+			font-family: 'SourceSansPro-Bold';
+		}
+
+		.footer {
+			width: 100%;
+			height: 160px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			background-color: #fff;
+		}
+
+		.footer .social-media {
+			margin: 20px auto;
 			width: 240px;
 			display: flex;
 			justify-content: space-between;
-			margin: 0 auto;
 		}
 
-		.contact .social-media img {
+		.footer .social-media img {
 			width: 32px;
 			height: 32px;
 			opacity: 1;
 		}
 
-		.contact .social-media img:hover {
+		.footer .social-media img:hover {
 			opacity: 0.6;
 		}
 
-		.footer {
-			width: 100%;
-			height: 80px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			background-color: rgb(80,95,72);
-		}
 
 		.footer p {
-			color: #fff;
+			color: #000;
 			font-size: 14px;
 			text-align: center;
 			line-height: 20px;
@@ -329,11 +395,10 @@
 			<span class="logo"><h1>Sophia Tang</h1></span>
 			<span class="menu"><img src="./images/icons/menu.svg"></span>
 			<ul>
-				<li><a href="./index.html">Home</a></li>
-				<li><a href="#">Works</a></li>
-				<li><a href="./photos.html">Photos</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
+				<!-- <li><a href="#">CONTECT</a></li> -->
 			</ul>
 		</div>
 
@@ -350,22 +415,28 @@
 				</div>
 			</div>
 
+			<div class="motto">
+				<!-- <p>I’m Sophia Tang, Shanghai based passionate UX designer and creative thinker who loves minimalism.</p> -->
+				<p>Driven by the passion to deliver great works to delight our users.</p>
+				<div class="rule"></div>
+			</div>
+
 			<div class="content">
 				<div class="works">
 					<div class='work work1'>
 						<div class='img-cover'></div>
-						<p class="work-name">Work Name</p>
-						<p class="work-year">2016</p>
+						<p class="work-name">Host & Guest</p>
+						<p class="work-year">2014</p>
 					</div>
 					<div class='work work2'>
 						<div class='img-cover'></div>
-						<p class="work-name">Work Name</p>
-						<p class="work-year">2015</p>
+						<p class="work-name">GeoPhoto</p>
+						<p class="work-year">2016</p>
 					</div>
 					<div class='work work3'>
 						<div class='img-cover'></div>
-						<p class="work-name">Work Name</p>
-						<p class="work-year">2016</p>
+						<p class="work-name">Feel your heart</p>
+						<p class="work-year">2014</p>
 					</div>
 					<div class='work work4'>
 						<div class='img-cover'></div>
@@ -382,23 +453,41 @@
 						<p class="work-name">Work Name</p>
 						<p class="work-year">2016</p>
 					</div>	
+					<div class='work work7'>
+						<div class='img-cover'></div>
+						<p class="work-name">Work Name</p>
+						<p class="work-year">2016</p>
+					</div>	
+					<div class='work work8'>
+						<div class='img-cover'></div>
+						<p class="work-name">Work Name</p>
+						<p class="work-year">2016</p>
+					</div>	
+					<div class='work work9'>
+						<div class='img-cover'></div>
+						<p class="work-name">Work Name</p>
+						<p class="work-year">2016</p>
+					</div>	
 				</div>
+				<button class="btn" target="_blank">VIEW MORE</button>
 			</div>
 
 			<div class="contact">
 				<div class="contact-me">
-					<p>KEEP IN TOUCH</p>
-					<span class="social-media">
+					<img src="./images/icons/quote mark.svg">
+					<p>If you'd like to discuss freelancing, a collaboration or any other exciting opportunities, feel free to reach out to me.</p>
+					<p class="email">sophia.tang0804@gmail.com</p>
+				</div>
+			</div>
+
+			<div class="footer">
+				<div class="social-media">
 						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
 						<a href=""><img src="./images/icons/Dribbble.svg" target="_blank"/></a>
 						<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
 						<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
 						<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
-					</span> 
-				</div>
-			</div>
-
-			<div class="footer">
+					</div> 
 				<p>All works © Sophia Tang 2017. Please do not reproduce without the expressed written consent of Sophia Tang.</p>
 			</div>
 		</div>		
