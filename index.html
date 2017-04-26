@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Sophia Tang's Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -45,24 +46,28 @@
 			display: none;
 		}
 
-		.header ul {
+		.header #mobile-nav {
+			display: none;
+		}
+
+		.header #global-nav {
 			list-style-type: none;
 			padding-right: 140px;
 		}
 
-		.header ul li {
+		.header #global-nav  li {
 			display: inline-block;
 			height: 100px;
 			line-height: 100px;
 			padding-left: 40px;
 		}
 
-		.header ul li:nth-child(1) a {
+		.header #global-nav li:nth-child(1) a {
 			color: #000;
 			border-bottom: 3px solid #000;
 		}
 
-		.header ul li a {
+		.header #global-nav li a {
 			color: #555;
 			text-decoration: none;
 			font-family: 'SourceSansPro-Regular';
@@ -70,7 +75,7 @@
 			height: 70px;
 		}
 
-		.header ul li a:hover {
+		.header #global-nav li a:hover {
 			color: #000;
 		}
 
@@ -117,11 +122,13 @@
 			cursor: pointer;
 			margin-right: 10px;
 			background-color: #000;
+			color: white;
 		}
 
 		.banner .text-area .pri-btn:hover {
 			background-color: rgb(80,95,72);
 			border: 2px solid rgb(80,95,72);
+			cursor:pointer;
 		}
 
 		.banner .text-area .pri-btn a {
@@ -144,11 +151,12 @@
 
 		.banner .text-area .sec-btn:hover {
 			background-color: #000;
+			color: #fff;
 		}
 
 		.banner .text-area .sec-btn a {
-			text-decoration:none;
-			color: #000;
+			text-decoration: none;
+			color: #000
 		}
 
 		.banner .text-area .sec-btn a:hover {
@@ -372,7 +380,7 @@
 		}
 
 		.wechat-bubble{
-	        bottom: 50px;
+	        bottom: 80px;
     		left: -90px;
 	        position: absolute;
 	        z-index: 999;
@@ -382,9 +390,10 @@
 	        transition: all 1s;
 	        background: url("./images/qr code.jpg") no-repeat;
 	        display: none;
+
 		}
 
-		/*.wechat-bubble:before {
+		.wechat-bubble:before {
 	        content:"";
 	        position: absolute;
 	        left: 50%;
@@ -395,7 +404,8 @@
 	        border-left: 12px solid transparent;
 	        border-right: 12px solid transparent;
 	        border-top: 16px solid #fff;
-        }*/
+	        background-color:black;
+        }
 
 		/*.footer .social-media .wechat:hover .wechat-bubble {
 			display: block;	
@@ -509,28 +519,38 @@
 			
 		}
 
-		@media screen and (min-width: 320px) and ( max-width: 413px) {
+		@media screen and (max-width: 413px) {
 			.header .logo {
 				padding-left: 10%;
 			}
 
-			.header ul {
+			.header #global-nav {
 				display: none;
 			}
 
-			/*.header ul {
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
 				position: fixed;
-				background: #555;
 				width: 100%;
-				height: 200px;
-				display: block;
-				display: flex;
-				flex-wrap: wrap;
-				flex-direction: column;
-				justify-content: center;
+				background-color: yellow;
+				text-align: center;
 			}
 
-			.header ul li {
+			.header #mobile-nav li{
+				color: #000;
+				margin: 0 auto;
+				line-height: 40px
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				background-color: red;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular';
+			}
+
+			/*.header ul li {
 				color: #fff;
 				padding-bottom: 20px;
 			}
@@ -538,9 +558,8 @@
 			.header ul li a {
 				color: #fff;
 				padding-bottom: 20px;
+
 			}*/
-
-
 
 			.header img {
 				position: absolute;
@@ -576,8 +595,8 @@
 			}
 
 			.content .works .work {
-				width: 290px;
-				height: 290px;
+				width: 320px;
+				height: 320px;
 			}
 
 			.contact .contact-me {
@@ -599,11 +618,16 @@
 		<div class="header">
 			<span class="logo"><a href="./index.html"><h1>Sophia Tang</h1></a></span>
 			<span class="menu"><img src="./images/icons/menu.svg"></span>
-			<ul>
+			<ul id="global-nav">
 				<li><a href="./index.html">WORKS</a></li>
 				<li><a href="./photos.html">PHOTOS</a></li>
 				<li><a href="./about.html">ABOUT</a></li>
 				<!-- <li><a href="#">CONTECT</a></li> -->
+			</ul>
+			<ul id="mobile-nav">
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
 			</ul>
 		</div>
 
@@ -614,8 +638,9 @@
 					<h2>Welcome to my portfolio.</h2>
 					<p>I am Sophia, a UX designer who is passionate about solving problems and creating a positive and nature user experience through design.</p>
 					<span class="btn">
-						<button class="pri-btn">
-							<a href="#view-works">VIEW WORKS<a>
+						<button class="pri-btn" onclick="location.href='#view-works';">
+						VIEW WORKS
+							<!-- <a href="#view-works">VIEW WORKS<a> -->
 						</button>
 						<button class="sec-btn">
 							<a href="#view-contact">CONTACT ME</a>
@@ -724,10 +749,10 @@
 			}
 
 		window.onscroll = function(){
-			if(window.scrollY > 1200) {
-				document.getElementsByClassName('back-to-top')[0].className += ' back-to-top-show';
+			if(window.scrollY > (document.body.clientHeight-window.innerHeight-200)) {
+				document.getElementsByClassName('back-to-top')[0].style.opacity = 1;
 			} else {
-				document.getElementsByClassName('back-to-top')[0].className = 'back-to-top';
+				document.getElementsByClassName('back-to-top')[0].style.opacity = 0;
 			}
 		}
 
@@ -745,7 +770,14 @@
 	    		// e.stopPropagation();
 	    		document.querySelector('.wechat-bubble').style.display = 'none';
 	    	});
+	    	document.querySelector(".mobile-nav").addEventListener("mouseenter", function(e) {
+	    		document.querySelector(".mobile-nav").style.display = "block";
+	    	})
 	    }
+
+	    // function menuclick() {
+
+	    // }
 
 		// function btnclick1() {
 		// 	window.scroll(0, 900);
