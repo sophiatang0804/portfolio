@@ -313,6 +313,14 @@
 			justify-content: space-between;
 		}
 
+		.footer .social-media {
+			list-style: none;
+		}
+
+		.footer .social-media li {
+			position: relative;
+		}
+
 		.footer .social-media img {
 			width: 32px;
 			height: 32px;
@@ -323,6 +331,42 @@
 			opacity: 0.6;
 		}
 
+		.wechat-bubble{
+/*			top: 2620px;
+	        left: 360px;*/
+	        bottom: 60px;
+    		left: -90px;
+	        position: absolute;
+	        z-index: 999;
+	        width: 200px;
+	        height: 200px;
+	        box-shadow: #8C9bA5 0 0 10px 1px;
+	        transition: all 1s;
+	        background: url("./images/qr code.jpg") no-repeat;
+	        display: none;
+		}
+
+		.wechat-bubble:before {
+	        content:"";
+	        position: absolute;
+	        left: 50%;
+	        top: 200px;
+	        width: 0;
+	        height: 0;
+	        margin-left: -8px;
+	        border-left: 12px solid transparent;
+	        border-right: 12px solid transparent;
+	        border-top: 16px solid #fff;
+	        /*box-shadow: #8C9bA5 0 0 10px 1px;*/
+	        /*display: none;*/
+        }
+
+		/*.footer .social-media .wechat:hover .wechat-bubble {
+			display: block;	
+		}*/
+
+      	
+
 		.footer p {
 			color: #000;
 			font-size: 14px;
@@ -331,10 +375,6 @@
 		}
 
 		@media screen and (min-width: 1200px) and (max-width: 1439px) {
-			/*body {
-				background-color: #F7C7C7;
-			}*/
-
 			.header .logo {
 				padding-left: 140px;
 			}
@@ -354,10 +394,6 @@
 		}
 
 		@media screen and (min-width: 992px) and (max-width: 1199px) {
-			/*body {
-				background-color: #DDEDED;
-			}*/
-
 			.content .works {
 				width: 920px;
 			}
@@ -373,10 +409,6 @@
 		}
 
 		@media screen and (min-width: 768px) and (max-width: 991px) {
-			/*body {
-				background-color: #FEE4D6;
-			}*/
-
 			.content .works {
 				width: 680px;
 			}
@@ -392,10 +424,6 @@
 		}
 
 		@media screen and (min-width: 414px) and (max-width: 767px) {
-			/*body {
-				background-color: #FEE4D6;
-			}*/
-
 			.header .logo {
 				padding-left: 10%;
 			}
@@ -441,10 +469,6 @@
 		}
 
 		@media screen and (min-width: 320px) and ( max-width: 413px) {
-			/*body {
-				background-color: #C6DAB8;
-			}*/
-
 			.header .logo {
 				padding-left: 10%;
 			}
@@ -499,15 +523,6 @@
 	</style>
 
 	<!-- <link rel='stylesheet' href='/.head.css'> -->
-	<script type="text/javascript">
-		function btnclick1() {
-			window.scroll(0, 900);
-			}
-		function btnclick2() {
-			window.scroll(0, 2500);
-			}
-	</script>
-
 </head>
 
 <body>
@@ -530,7 +545,9 @@
 					<h2>Welcome to my portfolio.</h2>
 					<p>I am Sophia, a UX designer who is passionate about solving problems and creating a positive and nature user experience through design.</p>
 					<span class="btn">
-						<button class="pri-btn" onclick="btnclick1();">VIEW WORKS</button>
+						<button class="pri-btn">
+							<a href="#view-works">VIEW WORKS<a>
+						</button>
 						<button class="sec-btn" onclick="btnclick2();">CONTACT ME</button>
 					</span>
 				</div>
@@ -543,7 +560,7 @@
 			</div>
 
 			<div class="content">
-				<div class="works">
+				<div class="works" id="view-works">
 					<div class='work work1'>
 						<div class='img-cover'></div>
 						<p class="work-name">Host & Guest</p>
@@ -602,16 +619,52 @@
 			</div>
 
 			<div class="footer">
-				<div class="social-media">
+				<ul class="social-media">
+					<li>
 						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
-						<a href="#"><img src="./images/icons/wechat.svg" target="_blank"/></a>
+					</li>
+					<li>
+						<div class="wechat-bubble"></div>
+						<a href="#"><img class="wechat" src="./images/icons/wechat.svg" target="_blank"/></a>
+					</li>
+					<li>
 						<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
+					</li>
+					<li>
 						<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
+					</li>
+					<li>
 						<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
-					</div> 
+					</li>
+				</ul> 
 				<p>All works © Sophia Tang 2017. Please do not reproduce without the expressed written consent of Sophia Tang.</p>
 			</div>
 		</div>		
 	</div>
+
+	<script type="text/javascript">
+	    document.addEventListener('DOMContentLoaded', function (event) {
+	    	init();
+	    });
+
+	    function init() {
+	    	document.querySelector('.wechat').addEventListener('mouseenter', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'block';
+	    	});
+
+	    	document.querySelector('.wechat').addEventListener('mouseleave', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'none';
+	    	});
+	    }
+
+		function btnclick1() {
+			window.scroll(0, 900);
+			}
+		function btnclick2() {
+			window.scroll(0, 2500);
+			}
+	</script>
 </body>
 </html>
