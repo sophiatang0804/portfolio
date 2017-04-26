@@ -116,7 +116,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			font-size: 36px;
+			font-size: 32px;
 			color: #555;
 			font-family: 'SourceSansPro-Regular';
 			opacity: 0;
@@ -181,6 +181,7 @@
 		}
 
 		.back-to-top {
+			cursor: pointer;
 			position: fixed;
 			width:70px;
 			height: 70px;
@@ -190,7 +191,7 @@
 			color: #000;
 			text-align: center;
 			line-height: 20px;
-			bottom: 200px;
+			bottom: 120px;
 			left: calc(50% - 35px);
 			opacity: 0;
     		transition: all 1s;
@@ -224,8 +225,12 @@
 			width: 240px;
 			display: flex;
 			justify-content: space-between;
-			margin: 0 auto;
 			margin-right: 140px;
+		}
+
+		.footer .social-media li{
+			list-style-type: none;
+			position: relative;
 		}
 
 		.footer .social-media img {
@@ -239,6 +244,32 @@
 			opacity: 0.6;
 		}
 
+		.wechat-bubble{
+	        bottom: 80px;
+    		left: -88px;
+	        position: absolute;
+	        z-index: 999;
+	        width: 200px;
+	        height: 200px;
+	        box-shadow: #8C9bA5 0 0 10px 1px;
+	        transition: all 1s;
+	        background: url("./images/qr code.jpg") no-repeat;
+	        display: none;
+		}
+
+		/*.wechat-bubble:before {
+	        content:"";
+	        position: absolute;
+	        left: 50%;
+	        top: 200px;
+	        width: 0;
+	        height: 0;
+	        margin-left: -8px;
+	        border-left: 12px solid transparent;
+	        border-right: 12px solid transparent;
+	        border-top: 16px solid #fff;
+        }*/
+
 		@media screen and (min-width: 1200px) and (max-width: 1439px) {
 			.content .works {
 				width: 1100px;
@@ -246,6 +277,13 @@
 			.content .works .work {
 				width: 340px;
 				height: 340px;
+			}
+			.work .work-name {
+				line-height: 340px;
+			}
+
+			.work .work-year {
+				line-height: 440px;
 			}
 		}
 
@@ -258,6 +296,13 @@
 				width: 280px;
 				height: 280px;
 			}
+			.work .work-name {
+				line-height: 280px;
+			}
+
+			.work .work-year {
+				line-height: 440px;
+			}
 		}
 
 		@media screen and (min-width: 768px) and (max-width: 991px) {
@@ -268,6 +313,13 @@
 			.content .works .work {
 				width: 320px;
 				height: 320px;
+			}
+			.work .work-name {
+				line-height: 320px;
+			}
+
+			.work .work-year {
+				line-height: 440px;
 			}
 		}
 
@@ -300,7 +352,6 @@
 
 			.work .work-name {
 				line-height: 350px;
-				font-size: 36px;
 			}
 
 			.work .work-year {
@@ -350,7 +401,7 @@
 
 			.work .work-name {
 				line-height: 290px;
-				font-size: 36px;
+				font-size: 32px;
 			}
 
 			.work .work-year {
@@ -373,21 +424,8 @@
 
 	</style>
 
-	<script type="text/javascript">
-		function backtotop() {
-			window.scroll(0, 0)
-			}
-
-		window.onscroll = function(){
-			if(window.scrollY > 1200) {
-				document.getElementsByClassName('back-to-top')[0].className += ' back-to-top-show';
-			} else {
-				document.getElementsByClassName('back-to-top')[0].className = 'back-to-top';
-			}
-		}
-	</script>
-
 </head>
+
 <body>
 	<div class="container">
 		<div class="header">
@@ -452,21 +490,64 @@
 					</div>		
 				</div>
 			</div>
+
 			<div class="back-to-top" onclick ="backtotop();">
 				<img src="./images/icons/back-to-top.svg">
 				<div>Top</div>
-				</div>
+			</div>
+
 			<div class="footer">
-				<div class="social-media">
-					<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
-					<a href="#"><img src="./images/icons/wechat.svg" target="_blank"/></a>
-					<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
-					<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
-					<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
-				</div> 
+				<ul class="social-media">
+					<li>
+						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
+					</li>
+					<li>
+						<div class="wechat-bubble"></div>
+						<a href="#"><img class="wechat" src="./images/icons/wechat.svg" target="_blank"/></a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
+					</li>
+				</ul> 
 				<p>All works © Sophia Tang 2017.</p>
 			</div>
 		</div>		
 	</div>
+
+	<script type="text/javascript">
+		function backtotop() {
+			window.scroll(0, 0)
+			}
+
+		window.onscroll = function(){
+			if(window.scrollY > 1200) {
+				document.getElementsByClassName('back-to-top')[0].className += ' back-to-top-show';
+			} else {
+				document.getElementsByClassName('back-to-top')[0].className = 'back-to-top';
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', function (event) {
+	    	init();
+	    });
+
+	    function init() {
+	    	document.querySelector('.wechat').addEventListener('mouseenter', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'block';
+	    	});
+
+	    	document.querySelector('.wechat').addEventListener('mouseleave', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'none';
+	    	});
+	    }
+	</script>
 </body>
 </html>

@@ -116,7 +116,6 @@
 			cursor: pointer;
 			margin-right: 10px;
 			background-color: #000;
-			color: #fff;
 		}
 
 		.banner .text-area .pri-btn:hover {
@@ -124,10 +123,14 @@
 			border: 2px solid rgb(80,95,72);
 		}
 
+		.banner .text-area .pri-btn a {
+			text-decoration:none;
+			color: #fff;
+		}
+
 		.banner .text-area .sec-btn {
 			padding: 10px 30px;
 			border: 2px solid #000;
-			color: #000;
 			background: transparent;
 			text-decoration: none;
 			font-size: 16px;
@@ -138,6 +141,14 @@
 
 		.banner .text-area .sec-btn:hover {
 			background-color: #000;
+		}
+
+		.banner .text-area .sec-btn a {
+			text-decoration:none;
+			color: #000;
+		}
+
+		.banner .text-area .sec-btn a:hover {
 			color: #fff;
 		}
 
@@ -314,7 +325,7 @@
 		}
 
 		.footer .social-media {
-			list-style: none;
+			list-style-type: none;
 		}
 
 		.footer .social-media li {
@@ -332,9 +343,7 @@
 		}
 
 		.wechat-bubble{
-/*			top: 2620px;
-	        left: 360px;*/
-	        bottom: 60px;
+	        bottom: 50px;
     		left: -90px;
 	        position: absolute;
 	        z-index: 999;
@@ -346,7 +355,7 @@
 	        display: none;
 		}
 
-		.wechat-bubble:before {
+		/*.wechat-bubble:before {
 	        content:"";
 	        position: absolute;
 	        left: 50%;
@@ -357,9 +366,7 @@
 	        border-left: 12px solid transparent;
 	        border-right: 12px solid transparent;
 	        border-top: 16px solid #fff;
-	        /*box-shadow: #8C9bA5 0 0 10px 1px;*/
-	        /*display: none;*/
-        }
+        }*/
 
 		/*.footer .social-media .wechat:hover .wechat-bubble {
 			display: block;	
@@ -548,7 +555,9 @@
 						<button class="pri-btn">
 							<a href="#view-works">VIEW WORKS<a>
 						</button>
-						<button class="sec-btn" onclick="btnclick2();">CONTACT ME</button>
+						<button class="sec-btn">
+							<a href="#view-contact">CONTACT ME</a>
+						</button>
 					</span>
 				</div>
 			</div>
@@ -611,7 +620,7 @@
 			</div>
 
 			<div class="contact">
-				<div class="contact-me">
+				<div class="contact-me" id="view-contact">
 					<img src="./images/icons/quote mark.svg">
 					<p>If you'd like to discuss freelancing, a collaboration or any other exciting opportunities, feel free to reach out to me.</p>
 					<p class="email">sophia.tang0804@gmail.com</p>
@@ -659,12 +668,12 @@
 	    	});
 	    }
 
-		function btnclick1() {
-			window.scroll(0, 900);
-			}
-		function btnclick2() {
-			window.scroll(0, 2500);
-			}
+		// function btnclick1() {
+		// 	window.scroll(0, 900);
+		// 	}
+		// function btnclick2() {
+		// 	window.scroll(0, 2500);
+		// 	}
 	</script>
 </body>
 </html>

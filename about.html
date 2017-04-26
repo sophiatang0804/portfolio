@@ -115,8 +115,12 @@
 			width: 240px;
 			display: flex;
 			justify-content: space-between;
-			margin: 0 auto;
 			margin-right: 140px;
+		}
+
+		.footer .social-media li{
+			list-style-type: none;
+			position: relative;
 		}
 
 		.footer .social-media img {
@@ -128,6 +132,19 @@
 
 		.footer .social-media img:hover {
 			opacity: 0.6;
+		}
+
+		.wechat-bubble{
+	        bottom: 80px;
+    		left: -88px;
+	        position: absolute;
+	        z-index: 999;
+	        width: 200px;
+	        height: 200px;
+	        box-shadow: #8C9bA5 0 0 10px 1px;
+	        transition: all 1s;
+	        background: url("./images/qr code.jpg") no-repeat;
+	        display: none;
 		}
 
 		@media screen and (min-width: 1200px) and (max-width: 1439px) {
@@ -250,18 +267,45 @@
 			</div>
 
 			<div class="footer">
-				<div class="contact-me">
-					<span class="social-media">
+				<ul class="social-media">
+					<li>
 						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
-						<a href="#"><img src="./images/icons/wechat.svg" target="_blank"/></a>
+					</li>
+					<li>
+						<div class="wechat-bubble"></div>
+						<a href="#"><img class="wechat" src="./images/icons/wechat.svg" target="_blank"/></a>
+					</li>
+					<li>
 						<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
+					</li>
+					<li>
 						<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
+					</li>
+					<li>
 						<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
-					</span> 
-				</div>
+					</li>
+				</ul> 
 				<p>All works © Sophia Tang 2017.</p>
 			</div>
 		</div>		
 	</div>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function (event) {
+	    	init();
+	    });
+
+	    function init() {
+	    	document.querySelector('.wechat').addEventListener('mouseenter', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'block';
+	    	});
+
+	    	document.querySelector('.wechat').addEventListener('mouseleave', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'none';
+	    	});
+	    }
+	</script>
 </body>
 </html>
