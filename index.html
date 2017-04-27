@@ -131,10 +131,10 @@
 			cursor:pointer;
 		}
 
-		.banner .text-area .pri-btn a {
+		/*.banner .text-area .pri-btn a {
 			text-decoration:none;
 			color: #fff;
-		}
+		}*/
 
 		.banner .text-area .sec-btn {
 			width: 150px;
@@ -154,10 +154,10 @@
 			color: #fff;
 		}
 
-		.banner .text-area .sec-btn a {
+		/*.banner .text-area .sec-btn a {
 			text-decoration: none;
 			color: #000
-		}
+		}*/
 
 		.banner .text-area .sec-btn a:hover {
 			color: #fff;
@@ -474,8 +474,46 @@
 				padding-left: 10%;
 			}
 
-			.header ul {
+			.header #global-nav {
 				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular';
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+
+			.header #mobile-nav li:nth-child(2) a{
+				border-bottom: 3px solid #000;
 			}
 
 			.header img {
@@ -485,6 +523,10 @@
 				width: 30px;
 				height: 21px;
 				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
 			}
 
 			.banner .text-area {
@@ -533,33 +575,38 @@
 				list-style-type: none;
 				position: fixed;
 				width: 100%;
-				background-color: yellow;
+				background-color: #fff;
 				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
 			}
 
 			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
 				color: #000;
 				margin: 0 auto;
-				line-height: 40px
 			}
 
 			.header #mobile-nav li a {
 				color: #000;
-				background-color: red;
 				text-decoration: none;
 				font-family: 'SourceSansPro-Regular';
+				font-size: 16px;
+				padding-bottom: 6px;
 			}
 
-			/*.header ul li {
-				color: #fff;
-				padding-bottom: 20px;
+			.header #mobile-nav li a:hover {
+				color: #555;
 			}
 
-			.header ul li a {
-				color: #fff;
-				padding-bottom: 20px;
 
-			}*/
+			.header #mobile-nav li:nth-child(2) a{
+				border-bottom: 3px solid #000;
+			}
 
 			.header img {
 				position: absolute;
@@ -568,6 +615,10 @@
 				width: 30px;
 				height: 21px;
 				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
 			}
 
 			.banner .text-area {
@@ -617,7 +668,7 @@
 	<div class="container">
 		<div class="header">
 			<span class="logo"><a href="./index.html"><h1>Sophia Tang</h1></a></span>
-			<span class="menu"><img src="./images/icons/menu.svg"></span>
+			<span class="menu"><img src="./images/icons/menu.svg" onclick="menuclick();"></span>
 			<ul id="global-nav">
 				<li><a href="./index.html">WORKS</a></li>
 				<li><a href="./photos.html">PHOTOS</a></li>
@@ -625,6 +676,7 @@
 				<!-- <li><a href="#">CONTECT</a></li> -->
 			</ul>
 			<ul id="mobile-nav">
+				<img class="close-button" src="./images/icons/close.svg" onclick="closeclick();">
 				<li><a href="./index.html">WORKS</a></li>
 				<li><a href="./photos.html">PHOTOS</a></li>
 				<li><a href="./about.html">ABOUT</a></li>
@@ -642,8 +694,7 @@
 						VIEW WORKS
 							<!-- <a href="#view-works">VIEW WORKS<a> -->
 						</button>
-						<button class="sec-btn">
-							<a href="#view-contact">CONTACT ME</a>
+						<button class="sec-btn" onclick="location.href='#view-contact'; ">CONTACT ME
 						</button>
 					</span>
 				</div>
@@ -770,14 +821,18 @@
 	    		// e.stopPropagation();
 	    		document.querySelector('.wechat-bubble').style.display = 'none';
 	    	});
-	    	document.querySelector(".mobile-nav").addEventListener("mouseenter", function(e) {
-	    		document.querySelector(".mobile-nav").style.display = "block";
+	    	document.querySelector("#mobile-nav").addEventListener("mouseenter", function(e) {
+	    		document.querySelector("#mobile-nav").style.display = "block";
 	    	})
 	    }
 
-	    // function menuclick() {
+	    function closeclick() {
+	    	document.getElementById('mobile-nav').style.display = 'none';
+	    }
 
-	    // }
+	    function menuclick() {
+	    	document.getElementById('mobile-nav').style.display = 'block';
+	    }
 
 		// function btnclick1() {
 		// 	window.scroll(0, 900);
