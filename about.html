@@ -47,24 +47,28 @@
 			display: none;
 		}
 
-		.header ul {
+		.header #mobile-nav {
+			display: none;
+		}
+
+		.header #global-nav {
 			list-style-type: none;
 			padding-right: 140px;
 		}
 
-		.header ul li {
+		.header #global-nav  li {
 			display: inline-block;
 			height: 100px;
 			line-height: 100px;
 			padding-left: 40px;
 		}
 
-		.header ul li:nth-child(3) a {
+		.header #global-nav li:nth-child(2) a {
 			color: #000;
 			border-bottom: 3px solid #000;
 		}
 
-		.header ul li a {
+		.header #global-nav li a {
 			color: #555;
 			text-decoration: none;
 			font-family: 'SourceSansPro-Regular';
@@ -72,7 +76,7 @@
 			height: 70px;
 		}
 
-		.header ul li a:hover {
+		.header #global-nav li a:hover {
 			color: #000;
 		}
 
@@ -170,8 +174,46 @@
 				padding-left: 10%;
 			}
 
-			.header ul {
+			.header #global-nav {
 				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular';
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+
+			.header #mobile-nav li:nth-child(4) a{
+				border-bottom: 3px solid #000;
 			}
 
 			.header img {
@@ -181,6 +223,10 @@
 				width: 30px;
 				height: 21px;
 				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
 			}
 
 			.content .about {
@@ -206,8 +252,46 @@
 				padding-left: 10%;
 			}
 
-			.header ul {
+			.header #global-nav {
 				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular';
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+
+			.header #mobile-nav li:nth-child(4) a{
+				border-bottom: 3px solid #000;
 			}
 
 			.header img {
@@ -217,6 +301,10 @@
 				width: 30px;
 				height: 21px;
 				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
 			}
 
 			.content .about {
@@ -244,8 +332,15 @@
 	<div class="container">
 		<div class="header">
 			<span class="logo"><a href="./index.html"><h1>Sophia Tang</h1></a></span>
-			<span class="menu"><img src="./images/icons/menu.svg"></span>
-			<ul>
+			<span class="menu"><img src="./images/icons/menu.svg" onclick="menuclick();"></span>
+			<ul id="global-nav">
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
+				<!-- <li><a href="#">CONTECT</a></li> -->
+			</ul>
+			<ul id="mobile-nav">
+				<img class="close-button" src="./images/icons/close.svg" onclick="closeclick();">
 				<li><a href="./index.html">WORKS</a></li>
 				<li><a href="./photos.html">PHOTOS</a></li>
 				<li><a href="./about.html">ABOUT</a></li>
