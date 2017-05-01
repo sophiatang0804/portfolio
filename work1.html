@@ -13,7 +13,7 @@
 		body {
 			font-size: 16px;
 			color: #000;
-			font-family:'SourceSansPro-Regular', helvetica;
+			font-family:'SourceSansPro-Regular', helvetica, sans-serif;
 			width: 100%;
 			max-width: 1440px;
 			margin: 0 auto;
@@ -32,7 +32,7 @@
 		}
 
 		.header .logo {
-			font-family: 'SourceSansPro-Bold', helvetica;
+			font-family: 'SourceSansPro-Bold', helvetica, sans-serif;
 			line-height: 100px;
 			padding-left: 140px;
 		}
@@ -70,7 +70,7 @@
 		.header #global-nav li a {
 			color: #555;
 			text-decoration: none;
-			font-family: 'SourceSansPro-Regular', helvetica;
+			font-family: 'SourceSansPro-Regular', helvetica, sans-serif;
 			display: inline-block;
 			height: 70px;
 		}
@@ -80,27 +80,31 @@
 		}
 
 		.interior-nav {
-			margin: 0 auto;
+			margin: 60px auto;
 			max-width: 1160px;
-			padding-top: 150px;
 			display: flex;
 			justify-content: space-between;
 		}
 
 		.interior-nav a {
 			text-decoration: none;
-			font-family: 'SourceSansPro-Regular', helvetica;
-			color: #000;
+			font-family: 'SourceSansPro-Regular', helvetica, sans-serif;;
+			color: #555;
 		}
 
 		.interior-nav a:hover {
 			opacity: 0.5;
 		}
 
+		.interior-nav a p {
+			margin-right: 10px;
+			margin-left: 10px;
+			display: inline-block;
+		}
 
 		.content {
 			width: 100%;
-			padding-top: 40px;
+			padding-top: 160px;
 			background-color: #fff;
 		}
 
@@ -112,25 +116,25 @@
 		.content .work-text .work-title {
 			width: 230px;
 			font-size: 36px;
-			font-family: 'SourceSansPro-Bold', helvetica;
-			padding-bottom: 20px;
+			font-family: 'SourceSansPro-Bold', helvetica, sans-serif;
+			padding-bottom: 40px;
 			margin: 0 auto;
 		}
 
-		.content .work-text p {
-			font-family: 'SourceSansPro-Light', helvetica;
+		.content .work-text .work-overview {
+			font-family: 'SourceSansPro-Light', helvetica, sans-serif;
 			width: 600px;
 			line-height: 24px;
 			margin: 0 auto;
 			padding-bottom: 60px;
 		}
 
-		.content .work1 {
+		.content .work {
 			margin: 0 auto;
 			width: 1160px;
-			height: 3500px;
-			background: url(./images/works/Bluemix China.png) no-repeat;
-			background-size: contain;: 
+			height: 3364px;
+			background: url(./images/works/BluemixChina.png) no-repeat;
+			background-size: contain;
 		}
 
 
@@ -266,7 +270,7 @@
 			.header #mobile-nav li a {
 				color: #000;
 				text-decoration: none;
-				font-family: 'SourceSansPro-Regular', helvetica;
+				font-family: 'SourceSansPro-Regular', helvetica, sans-serif;
 				font-size: 16px;
 				padding-bottom: 6px;
 			}
@@ -345,7 +349,7 @@
 			.header #mobile-nav li a {
 				color: #000;
 				text-decoration: none;
-				font-family: 'SourceSansPro-Regular', helvetica;
+				font-family: 'SourceSansPro-Regular', helvetica, sans-serif;
 				font-size: 16px;
 				padding-bottom: 6px;
 			}
@@ -370,10 +374,6 @@
 
 			.header img:hover {
 				opacity: 0.6;
-			}
-
-			.content .works {
-				width: 320px;
 			}
 
 			.footer {
@@ -418,24 +418,23 @@
 		</div>
 
 		<div class="main">
-			<div class="interior-nav">
-				<!-- <div class="rule"></div> -->
-				<a href="#"><img src="./images/icons/previous.svg"> PREVIOUS WORK</a>
-				<a href="#">NEXT WORK <img src="./images/icons/next.svg"></a>
-				<!-- <div class="rule"></div> -->
-			</div>
 
 			<div class="content">
 				<div class="work-text">
 					<p class="work-title">Bluemix China</p>
 					<p class="work-overview">Bluemix China is an open-standards, cloud platform for building, running and managing applications, which is tailor made for China cloud users. Bluemix China is an open-standards, cloud platform for building, running and managing applications, which is tailor made for China cloud users. Bluemix China is an open-standards, cloud platform for building, running and managing applications, which is tailor made for China cloud users.</p>
 				</div>
-				<div class="work1"></div>
+				<div class="work"></div>
 			</div>
 
 			<div class="back-to-top" onclick ="backtotop();">
 				<img src="./images/icons/back-to-top.svg">
 				<div>Top</div>
+			</div>
+
+			<div class="interior-nav">
+				<a href="#"><img src="./images/icons/previous.svg"><p>PREVIOUS WORK</p></a>
+				<a href="#"><p>NEXT WORK</p><img src="./images/icons/next.svg"></a>
 			</div>
 
 			<div class="footer">
