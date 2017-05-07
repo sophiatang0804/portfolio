@@ -80,20 +80,22 @@
 		}
 
 		.interior-nav {
-			margin: 60px auto;
+			margin: 0 auto;
 			max-width: 1160px;
 			display: flex;
 			justify-content: space-between;
+			padding-top: 160px;
 		}
 
 		.interior-nav a {
 			text-decoration: none;
 			font-family: 'SourceSansPro-Regular', helvetica, sans-serif;;
 			color: #555;
+			opacity: 0.5;
 		}
 
 		.interior-nav a:hover {
-			opacity: 0.5;
+			opacity: 1;
 		}
 
 		.interior-nav a p {
@@ -104,7 +106,7 @@
 
 		.content {
 			width: 100%;
-			padding-top: 160px;
+			padding-top: 60px;
 			background-color: #fff;
 		}
 
@@ -132,8 +134,8 @@
 		.content .work {
 			margin: 0 auto;
 			width: 1160px;
-			height: 3364px;
-			background: url(./images/works/BluemixChina.png) no-repeat;
+			height: 3450px;
+			background: url(./images/works/bmxcn.png) no-repeat;
 			background-size: contain;
 		}
 
@@ -217,21 +219,48 @@
 				padding-left: 140px;
 			}
 
-			.content .works {
+			.interior-nav {
+				max-width: 1100px;
+			}
+
+			.content .work {
+				width: 1100px;
+				height: 3300px;
+			}
+
+			.content .work-text {
 				width: 1100px;
 			}
 
 		}
 
 		@media screen and (min-width: 992px) and (max-width: 1199px) {
-			.content .works {
+			.interior-nav {
+				max-width: 920px;
+			}
+
+			.content .work {
+				width: 920px;
+				height: 2800px;
+			}
+
+			.content .work-text {
 				width: 920px;
 			}
 
 		}
 
 		@media screen and (min-width: 768px) and (max-width: 991px) {
-			.content .works {
+			.interior-nav {
+				max-width: 680px;
+			}
+
+			.content .work {
+				width: 680px;
+				height: 2100px;
+			}
+
+			.content .work-text {
 				width: 680px;
 			}
 
@@ -295,6 +324,24 @@
 
 			.header img:hover {
 				opacity: 0.6;
+			}
+
+			.interior-nav {
+				max-width: 350px;
+			}
+
+
+			.content .work {
+				width: 350px;
+				height: 1150px;
+			}
+
+			.content .work-text {
+				width: 350px;
+			}
+
+			.content .work-text .work-overview {
+				width: 350px;
 			}
 
 			.footer {
@@ -376,6 +423,24 @@
 				opacity: 0.6;
 			}
 
+			.interior-nav {
+				max-width: 290px;
+			}
+
+
+			.content .work {
+				width: 290px;
+				height: 1000px;
+			}
+
+			.content .work-text {
+				width: 290px;
+			}
+
+			.content .work-text .work-overview {
+				width: 290px;
+			}
+
 			.footer {
 				display: block;
 			}
@@ -417,8 +482,12 @@
 			</ul>
 		</div>
 
-		<div class="main">
+		<div class="interior-nav">
+			<a href="#"><img src="./images/icons/previous.svg"><p>PREVIOUS WORK</p></a>
+			<a href="#"><p>NEXT WORK</p><img src="./images/icons/next.svg"></a>
+		</div>
 
+		<div class="main">
 			<div class="content">
 				<div class="work-text">
 					<p class="work-title">Bluemix China</p>
@@ -431,11 +500,6 @@
 			<div class="back-to-top" onclick ="backtotop();">
 				<img src="./images/icons/back-to-top.svg">
 				<div>Top</div>
-			</div>
-
-			<div class="interior-nav">
-				<a href="#"><img src="./images/icons/previous.svg"><p>PREVIOUS WORK</p></a>
-				<a href="#"><p>NEXT WORK</p><img src="./images/icons/next.svg"></a>
 			</div>
 
 			<div class="footer">
