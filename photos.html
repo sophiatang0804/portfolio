@@ -20,7 +20,7 @@
 
 		.header {
 			position: fixed;
-			z-index: 9999;
+			z-index: 999;
 			width: 100%;
 			max-width: 1440px;
 			height: 100px;
@@ -77,6 +77,34 @@
 		.header #global-nav li a:hover {
 			color: #000;
 		}
+
+
+		#popup {
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			z-index: 1000;
+			display: none;
+		}
+
+		#popup .mask {
+			height: 100%;
+			width: 100%;
+			background-color: #000;
+			opacity: 0.7;
+			z-index: 1001;
+		}
+
+		#popup .dialog {
+			position: absolute;
+			top: 100px;
+			left: calc(50% - 400px);
+			height: 600px;
+			width: 800px;
+			background-color: #fff;
+			z-index: 1002;
+		}
+
 
 		.content {
 			width: 100%;
@@ -537,6 +565,7 @@
 
 <body>
 	<div class="container">
+
 		<div class="header">
 			<span class="logo"><a href="./index.html"><h1>Sophia Tang</h1></a></span>
 			<span class="menu"><img src="./images/icons/menu.svg" onclick="menuclick();"></span>
@@ -554,9 +583,14 @@
 			</ul>
 		</div>
 
-			<div class="content">
+		<div id="popup">
+			<div class="mask">123456789</div>
+			<div class="dialog"></div>
+		</div>
+
+		<div class="content">
 				<div class="images">
-					<div class='image image1'>
+					<div class='image image1' onclick="btnclick();">
 						<div class='img-cover'></div>
 						<p class="image-name">Hong Kong</p>
 						<p class="image-year">2016</p>
@@ -617,14 +651,14 @@
 						<p class="image-year">2016</p>
 					</div>			
 				</div>
-			</div>
+		</div>
 
-			<div class="back-to-top" onclick ="backtotop();">
+		<div class="back-to-top" onclick ="backtotop();">
 				<img src="./images/icons/back-to-top.svg">
 				<div>Top</div>
-			</div>
+		</div>
 
-			<div class="footer">
+		<div class="footer">
 				<ul class="social-media">
 					<li>
 						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
@@ -644,7 +678,7 @@
 					</li>
 				</ul> 
 				<p>All works © Sophia Tang 2017.</p>
-			</div>
+		</div>
 		</div>		
 	</div>
 
@@ -691,6 +725,10 @@
 
 	    function menuclick() {
 	    	document.getElementById('mobile-nav').style.display = 'block';
+	    }
+
+	    function btnclick(){
+	    	document.getElementById("popup").style.display = "block";
 	    }
 	</script>
 </body>
