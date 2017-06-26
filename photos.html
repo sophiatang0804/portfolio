@@ -20,7 +20,7 @@
 
 		.header {
 			position: fixed;
-			z-index: 999;
+			z-index: 1;
 			width: 100%;
 			max-width: 1440px;
 			height: 100px;
@@ -105,7 +105,7 @@
 			z-index: 1002;
 		}
 
-		#popup .dialog #pic1 {
+		#popup .dialog #popup-image {
 			width: 600px;
 			height: 600px;
 			position: relative;
@@ -120,6 +120,16 @@
 			cursor: pointer;
 		}
 
+			
+        <div class="images">
+					<div class='image' onclick="btnclick(this);">
+						<div class='img-cover'></div>
+						<div class="image-text">
+							<p class="image-name">Hong Kong</p>
+							<p class="image-year">2016</p>
+						</div>
+						<img src="./images/photos/pic1.jpg" alt="">
+					</div>
 
 
 		.content {
@@ -141,105 +151,52 @@
 			height: 360px;
 			margin-bottom: 40px;
 			position: relative;
-			background-size: cover;
 		}
-
-		.image .img-cover{
+		
+		.image .img-cover {
 			width: 100%;
 			height: 100%;
+			position: absolute;
+			opacity: 0;
+			z-index: 3;
 		}
 
 		.image:hover .img-cover {
 			background: #fff;
 			box-shadow: #8C9bA5 0 0 20px 2px;
 			opacity: 0.8;
-			transition: all, 1s;
+			transition: all, 0.6s;
 		}
 
-		.image .image-name {
-			width: 100%;
-			height: 100%;
-			line-height: 360px;
-			text-align: center;
+		.image .image-text {
 			position: absolute;
-			top: 0;
-			left: 0;
-			font-size: 32px;
+			z-index: 4;	
+			opacity: 0;	
 			color: #555;
+			font-size: 32px;
+			text-align: center;
+			width: 100%;
+			top: calc(50% - 40px);
+		}
+
+		.image:hover .image-text {
+			opacity: 1;
+		}
+
+		.image .image-text .image-name {
 			font-family: 'SourceSansPro-Regular';
-			opacity: 0;
 		}
 
-		.image .image-year {
-			width: 100%;
-			height: 100%;
-			line-height: 480px;
-			text-align: center;
-			position: absolute;
-			top: 0;
-			left: 0;
-			font-size: 32px;
-			color: #555;
+		.image .image-text .image-year {
 			font-family: 'SourceSansPro-Light';
-			opacity: 0;
 		}
 
-		.image:hover .image-name {
-			opacity: 1;
+		.image img {
+			width: 360px;
+			height: 360px;
+			position: absolute;
+			z-index: 2;
 		}
-
-		.image:hover .image-year {
-			opacity: 1;
-		}
-
-		.images .image1 {
-			background: url(./images/photos/pic1.jpg) no-repeat;
-		}
-
-		.images .image2 {
-			background: url(./images/photos/pic2.jpg) no-repeat;
-		}
-
-		.images .image3 {
-			background: url(./images/photos/pic3.jpg) no-repeat;
-		}
-
-		.images .image4 {
-			background: url(./images/photos/pic4.jpg) no-repeat;
-		}
-
-		.images .image5 {
-			background: url(./images/photos/pic5.jpg) no-repeat;
-		}
-
-		.images .image6 {
-			background: url(./images/photos/pic6.jpg) no-repeat;
-		}
-
-		.images .image7 {
-			background: url(./images/photos/pic7.jpg) no-repeat;
-		}
-
-		.images .image8 {
-			background: url(./images/photos/pic8.jpg) no-repeat;
-		}
-
-		.images .image9 {
-			background: url(./images/photos/pic9.jpg) no-repeat;
-		}
-
-		.images .image10 {
-			background: url(./images/photos/pic10.jpg) no-repeat;
-		}
-
-		.images .image11 {
-			background: url(./images/photos/pic11.jpg) no-repeat;
-		}
-
-		.images .image12 {
-			background: url(./images/photos/pic12.jpg) no-repeat;
-		}
-
 
 		.back-to-top {
 			cursor: pointer;
@@ -257,10 +214,6 @@
 			opacity: 0;
     		transition: all 1s;
 		}
-
-		/*.back-to-top-show {
-			opacity: 1;
-		}*/
 
 		.back-to-top img {
 			margin-top: 20px;
@@ -318,18 +271,6 @@
 	        display: none;
 		}
 
-		/*.wechat-bubble:before {
-	        content:"";
-	        position: absolute;
-	        left: 50%;
-	        top: 200px;
-	        width: 0;
-	        height: 0;
-	        margin-left: -8px;
-	        border-left: 12px solid transparent;
-	        border-right: 12px solid transparent;
-	        border-top: 16px solid #fff;
-        }*/
 
 		@media screen and (min-width: 1200px) and (max-width: 1439px) {
 			.content .images {
@@ -444,6 +385,7 @@
 				opacity: 0.6;
 			}
 
+
 			.content .images {
 				width: 350px;
 			}
@@ -453,11 +395,11 @@
 				height: 350px;
 			}
 
-			.image .image-name {
+			.image .image-text .image-name {
 				line-height: 350px;
 			}
 
-			.image .image-year {
+			.image .image-text .image-year {
 				line-height: 440px;
 			}
 
@@ -589,7 +531,7 @@
 				<li><a href="./index.html">WORKS</a></li>
 				<li><a href="./photos.html">PHOTOS</a></li>
 				<li><a href="./about.html">ABOUT</a></li>
-				<!-- <li><a href="#">CONTECT</a></li> -->
+				<!-- <li><a href="#">CONTACT</a></li> -->
 			</ul>
 			<ul id="mobile-nav">
 				<img class="close-button" src="./images/icons/close.svg" onclick="closeclick();">
@@ -603,72 +545,121 @@
 			<div class="mask" onclick="maskclick()"></div>
 			<div class="dialog">
 				<img id="dialog-close-button" src="./images/icons/close_white.svg" alt="" onclick="dialogclose()">
-				<img id="pic1" src="./images/photos/pic1.jpg" alt="">
+				<img id="popup-image" src="./images/photos/pic1.jpg" alt="">
 			</div>
 		</div>
 
 		<div class="content">
+
 				<div class="images">
-					<div class='image image1' onclick="btnclick();">
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Hong Kong</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">Hong Kong</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic1.jpg" alt="">
 					</div>
-					<div class='image image2'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">HK PolyU</p>
+							<p class="image-year">2015</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">HK PolyU</p>
-						<p class="image-year">2015</p>
+						<img src="./images/photos/pic2.jpg" alt="">
 					</div>
-					<div class='image image3'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Kwun Tong</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">Kwun Tong</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic3.jpg" alt="">
 					</div>
-					<div class='image image4'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">HKUST</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">HKUST</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic4.jpg" alt="">
 					</div>
-					<div class='image image5'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">HKUST</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">HKUST</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic5.jpg" alt="">
 					</div>
-					<div class='image image6'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">HKUST</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">HKUST</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic6.jpg" alt="">
 					</div>
-					<div class='image image7'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">The Bund</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">The Bund</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic7.jpg" alt="">
 					</div>
-					<div class='image image8'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Lu Jia Zui</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">Lu Jia Zui</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic8.jpg" alt="">
 					</div>		
-					<div class='image image9'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Oriental Pearl Tower</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">Oriental Pearl Tower</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic9.jpg" alt="">
 					</div>
-					<div class='image image10'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Shanghai</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">Shanghai</p>
-						<p class="image-year">2016</p>
+						<img src="./images/photos/pic10.jpg" alt="">
 					</div>
-					<div class='image image11'>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Wuzhen</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">Wuzhen</p>
-						<p class="image-year">2016</p>
-					</div>		
-					<div class='image image12'>
+						<img src="./images/photos/pic11.jpg" alt="">
+					</div>	
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Mercedes-Benz Arena</p>
+							<p class="image-year">2016</p>
+						</div>
 						<div class='img-cover'></div>
-						<p class="image-name">Mercedes-Benz Arena</p>
-						<p class="image-year">2016</p>
-					</div>			
+						<img src="./images/photos/pic12.jpg" alt="">
+					</div>	
+
 				</div>
 		</div>
 
@@ -746,7 +737,12 @@
 	    	document.getElementById('mobile-nav').style.display = 'block';
 	    }
 
-	    function btnclick(){
+	    function btnclick(x){
+	    	var y = x.getElementsByTagName('img')[0];
+	    	if(y){
+	    		var m= document.getElementById('popup-image');
+	    		m.src = y.src;
+	    	}
 	    	document.getElementById("popup").style.display = "block";
 	    }
 
