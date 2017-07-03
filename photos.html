@@ -540,7 +540,7 @@
 							<p class="image-year">2015</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic2.jpg" alt="">
+						<img name="pic2.jpg" src="./images/photos/pic2.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -714,7 +714,7 @@
 	    	var y = x.getElementsByTagName('img')[0];
 	    	if(y){
 	    		var m= document.getElementById('popup-image');
-	    		m.src = y.src;
+	    		m.src = "./1/"+y.name;
 	    	}
 	    	document.getElementById("popup").style.display = "block";
 	    }
