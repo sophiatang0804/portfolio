@@ -99,8 +99,8 @@
 			position: absolute;
 			top: 100px;
 			left: 30%;
-			width: 40%;
-			height: auto;
+			width: 40vw;
+			height: 40vw;
 			background-color: #fff;
 			z-index: 1002;
 		}
@@ -281,8 +281,8 @@
 				height: 280px;
 			}
 			#popup .dialog {
-				width: 50%;
-				height: auto;
+				width: 50vw;
+				height: 50vw;
 				left: 25%;
 			}
 		}
@@ -297,8 +297,8 @@
 				height: 320px;
 			}
 			#popup .dialog {
-				height: auto;
-				width: 60%;
+				height: 60vw;
+				width: 60vw;
 				left: 20%;
 			}
 		}
@@ -374,8 +374,8 @@
 			}
 
 			#popup .dialog {
-				height: auto;
-				width: 70%;
+				height: 70vw;
+				width: 70vw;
 				left: 15%;
 			}
 
@@ -467,8 +467,8 @@
 			}
 
 			#popup .dialog {
-				height: auto;
-				width: 90%;
+				height: 90vw;
+				width: 90vw;
 				left: 5%;
 			}
 
@@ -499,15 +499,14 @@
 
 		<div class="header">
 			<span class="logo"><a href="./index.html"><h1>Sophia Tang</h1></a></span>
-			<span class="menu"><img src="./images/icons/menu.svg" onclick="menuclick();"></span>
+			<span class="menu"><img src="./images/icons/menu.svg" ontouchend="menuclick();" onclick="menuclick();"></span>
 			<ul id="global-nav">
 				<li><a href="./index.html">WORKS</a></li>
 				<li><a href="./photos.html">PHOTOS</a></li>
 				<li><a href="./about.html">ABOUT</a></li>
-				<!-- <li><a href="#">CONTACT</a></li> -->
 			</ul>
 			<ul id="mobile-nav">
-				<img class="close-button" src="./images/icons/close.svg" onclick="closeclick();">
+				<img class="close-button" src="./images/icons/close.svg"  onclick="closeclick();">
 				<li><a href="./index.html">WORKS</a></li>
 				<li><a href="./photos.html">PHOTOS</a></li>
 				<li><a href="./about.html">ABOUT</a></li>
@@ -518,7 +517,7 @@
 			<div class="mask" onclick="maskclick()"></div>
 			<div class="dialog">
 				<img id="dialog-close-button" src="./images/icons/close_white.svg" alt="" onclick="dialogclose()">
-				<img id="popup-image" src="./images/photos/pic1.jpg" alt="">
+				<img id="popup-image" src="./images/photos/lg/pic1_lg.jpg" alt="">
 			</div>
 		</div>
 
@@ -531,7 +530,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic1.jpg" alt="">
+						<img name="pic1_lg.jpg" src="./images/photos/sm/pic1_sm.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -540,7 +539,7 @@
 							<p class="image-year">2015</p>
 						</div>
 						<div class='img-cover'></div>
-						<img name="pic2.jpg" src="./images/photos/pic2.jpg" alt="">
+						<img name="pic2_lg.jpg" src="./images/photos/sm/pic2_sm.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -549,7 +548,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic3.jpg" alt="">
+						<img src="./images/photos/sm/pic3.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -558,7 +557,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic4.jpg" alt="">
+						<img src="./images/photos/sm/pic4.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -567,7 +566,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic5.jpg" alt="">
+						<img src="./images/photos/sm/pic5.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -576,7 +575,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic6.jpg" alt="">
+						<img src="./images/photos/sm/pic6.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -585,7 +584,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic7.jpg" alt="">
+						<img src="./images/photos/sm/pic7.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -594,7 +593,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic8.jpg" alt="">
+						<img src="./images/photos/sm/pic8.jpg" alt="">
 					</div>		
 
 					<div class='image' onclick="btnclick(this);">
@@ -603,7 +602,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic9.jpg" alt="">
+						<img src="./images/photos/sm/pic9.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -612,7 +611,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic10.jpg" alt="">
+						<img src="./images/photos/sm/pic10.jpg" alt="">
 					</div>
 
 					<div class='image' onclick="btnclick(this);">
@@ -621,7 +620,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic11.jpg" alt="">
+						<img src="./images/photos/sm/pic11.jpg" alt="">
 					</div>	
 
 					<div class='image' onclick="btnclick(this);">
@@ -630,7 +629,7 @@
 							<p class="image-year">2016</p>
 						</div>
 						<div class='img-cover'></div>
-						<img src="./images/photos/pic12.jpg" alt="">
+						<img src="./images/photos/sm/pic12.jpg" alt="">
 					</div>	
 
 				</div>
@@ -714,7 +713,7 @@
 	    	var y = x.getElementsByTagName('img')[0];
 	    	if(y){
 	    		var m= document.getElementById('popup-image');
-	    		m.src = "./1/"+y.name;
+	    		m.src = "./images/photos/lg/"+y.name;
 	    	}
 	    	document.getElementById("popup").style.display = "block";
 	    }
