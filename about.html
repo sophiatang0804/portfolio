@@ -83,7 +83,7 @@
 
 		.content {
 			width: 100%;
-			margin-bottom: 80px;
+			margin-bottom: 60px;
 		}
 
 		.content .about {
@@ -98,9 +98,29 @@
 			
 		}
 
-		.content .about p {
-			margin-top: 20px;
+		.content .about .personaldiscription{
+			margin: 40px 0 60px 0;
 		}
+
+		.content .about p {
+			margin: 20px 0;
+		}
+
+		.content .about .downloadresume {
+			border: 2px solid #000;
+			color: #000;
+			background: transparent;
+			text-decoration: none;
+			font-size: 16px;
+			font-family: 'SourceSansPro-Regular', helvetica;
+			cursor: pointer;
+			padding: 10px;
+			}
+
+		.content .about .downloadresume:hover {
+			background-color: #000;
+			color: #fff;
+			}
 
 		.footer {
 			width: 100%;
@@ -313,6 +333,7 @@
 				margin-bottom: 40px;
 			}
 
+
 			.footer {
 				display: flex;
 				flex-direction: column;
@@ -349,15 +370,18 @@
 
 		<div class="content">
 			<div class="about">
-				<h1 >Hey y'all. <br>Nice to virtually <br>meet you!</h1>
+				<h1 >Hey y'all. <br>Nice to virtually meet you!</h1>
+				<div class="personaldiscription">
+					<p>I’m <b>Sophia Tang</b>, a UX designer based in Shanghai, China. I am a passionate problem-solver, able to empathize with users and turn that empathy into design insight, synthesize the art of the possible to come up with ways to delight our users. Also I'm a keen amateur photographer.</p>
 
-				<p>I’m <b>Sophia Tang</b>, a UX designer based in Shanghai, China. I am a passionate problem-solver, able to empathize with users and turn that empathy into design insight, synthesize the art of the possible to come up with ways to delight our users. Also I'm a keen amateur photographer.</p>
+					<p>Graduated from Hong Kong Polytechnic University, where I received my Master of Design in Interaction Design. Currently I am working as a user experience designer at IBM, designing enterprise software for cloud-based IaaS ans PaaS products.</p> 
 
-				<p>Graduated from Hong Kong Polytechnic University, where I received my Master of Design in Interaction Design. Currently I am working as a user experience designer at IBM, designing enterprise software for cloud-based IaaS ans PaaS products.</p> 
+					<p>More information about my career and competencies can be found on my <a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><b>Linkin</b></a> profile.</p>
 
-				<p>More information about my career and competencies can be found on my <a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><b>Linkin</b></a> profile.</p>
+					<p>If you'd like to discuss freelancing, a collaboration or any other exciting opportunities, feel free to reach out to me via <b>sophia.tang0804@gmail.com</b>.</p>
+				</div>
 
-				<p>If you'd like to discuss freelancing, a collaboration or any other exciting opportunities, feel free to reach out to me via <b>sophia.tang0804@gmail.com</b>.</p>
+				<a class="downloadresume" href="./SophiaTang_Resume.pdf" download="SophiaTang_Resume">Download Resume</a>
 			</div>
 		</div>
 
