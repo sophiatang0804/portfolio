@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="us-en">
+<head>
+	<meta charset="utf-8">
+	<title>Sophia Tang's Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-size: 16px;
+			color: #000;
+			font-family:'SourceSansPro-Regular', helvetica, sans-serif;
+			width: 100%;
+			max-width: 1440px;
+			margin: 0 auto;
+		}
+
+		.header {
+			position: fixed;
+			z-index: 9999;
+			width: 100%;
+			max-width: 1440px;
+			height: 100px;
+			background-color: #fff;
+			opacity: 0.9;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.header .logo {
+			font-family: 'SourceSansPro-Bold', helvetica, sans-serif;
+			line-height: 100px;
+			padding-left: 140px;
+		}
+
+		.header .logo a{
+			text-decoration: none;
+			color: #000;
+		}
+
+		.header img {
+			display: none;
+		}
+
+		.header #mobile-nav {
+			display: none;
+		}
+
+		.header #global-nav {
+			list-style-type: none;
+			padding-right: 140px;
+		}
+
+		.header #global-nav  li {
+			display: inline-block;
+			height: 100px;
+			line-height: 100px;
+			padding-left: 40px;
+		}
+
+		.header #global-nav li:nth-child(1) a {
+			color: #000;
+			border-bottom: 3px solid #000;
+		}
+
+		.header #global-nav li a {
+			color: #555;
+			text-decoration: none;
+			font-family: 'SourceSansPro-Regular', helvetica, sans-serif;
+			display: inline-block;
+			height: 70px;
+		}
+
+		.header #global-nav li a:hover {
+			color: #000;
+		}
+
+		.interior-nav {
+			margin: 0 auto;
+			max-width: 1160px;
+			display: flex;
+			justify-content: space-between;
+			padding-top: 160px;
+		}
+
+		.interior-nav a {
+			text-decoration: none;
+			font-family: 'SourceSansPro-Regular', helvetica, sans-serif;;
+			color: #555;
+			opacity: 0.5;
+		}
+
+		.interior-nav a:hover {
+			opacity: 1;
+		}
+
+		.interior-nav a p {
+			margin-right: 10px;
+			margin-left: 10px;
+			display: inline-block;
+		}
+
+		.content {
+			width: 100%;
+			padding-top: 60px;
+			background-color: #fff;
+		}
+
+		.content .work-text {
+			width: 1160px;
+			margin: 0 auto;
+		}
+
+		.content .work-text .work-title {
+			width: 230px;
+			font-size: 36px;
+			font-family: 'SourceSansPro-Bold', helvetica, sans-serif;
+			padding-bottom: 40px;
+			margin: 0 auto;
+		}
+
+		.content .work-text .work-overview {
+			font-family: 'SourceSansPro-Light', helvetica, sans-serif;
+			width: 600px;
+			line-height: 24px;
+			margin: 0 auto;
+			padding-bottom: 60px;
+		}
+
+		.content .work {
+			margin: 0 auto;
+			width: 80%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.content .work img {
+			width: 100%;
+		}
+
+
+		.back-to-top {
+			cursor: pointer;
+			position: fixed;
+			width:70px;
+			height: 70px;
+			border-radius: 35px;
+			background: #f5f7fa;
+			margin: 0 auto;
+			color: #000;
+			text-align: center;
+			line-height: 20px;
+			bottom: 180px;
+			left: calc(50% - 35px);
+			opacity: 0;
+    		transition: all 1s;
+    		box-shadow: #D4D4D4 0 0 20px 1px;
+		}
+
+		.back-to-top img {
+			margin-top: 20px;
+		}
+
+		.footer {
+			width: 100%;
+			height: 100px;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+		}
+
+		.footer p {
+			color: #000;
+			font-size: 14px;
+			text-align: center;
+			line-height: 100px;
+			padding-left: 140px;
+		}
+
+		.footer .social-media {
+			width: 240px;
+			display: flex;
+			justify-content: space-between;
+			margin-right: 140px;
+		}
+
+		.footer .social-media li{
+			list-style-type: none;
+			position: relative;
+		}
+
+		.footer .social-media img {
+			padding-top: 34px;
+			width: 32px;
+			height: 32px;
+			opacity: 1;
+		}
+
+		.footer .social-media img:hover {
+			opacity: 0.6;
+		}
+
+		.wechat-bubble{
+	        bottom: 80px;
+    		left: -88px;
+	        position: absolute;
+	        z-index: 999;
+	        width: 200px;
+	        height: 200px;
+	        box-shadow: #8C9bA5 0 0 10px 1px;
+	        transition: all 1s;
+	        background: url("./images/qr code.jpg") no-repeat;
+	        display: none;
+		}
+
+		@media screen and (min-width: 1200px) and (max-width: 1439px) {
+			.header .logo {
+				padding-left: 140px;
+			}
+
+			.interior-nav {
+				max-width: 1100px;
+			}
+
+			.content .work {
+				width: 1100px;
+				height: 3300px;
+			}
+
+			.content .work-text {
+				width: 1100px;
+			}
+
+		}
+
+		@media screen and (min-width: 992px) and (max-width: 1199px) {
+			.interior-nav {
+				max-width: 920px;
+			}
+
+			.content .work {
+				width: 920px;
+				height: 2800px;
+			}
+
+			.content .work-text {
+				width: 920px;
+			}
+
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 991px) {
+			.interior-nav {
+				max-width: 680px;
+			}
+
+			.content .work {
+				width: 680px;
+				height: 2100px;
+			}
+
+			.content .work-text {
+				width: 680px;
+			}
+
+		}
+
+		@media screen and (min-width: 414px) and (max-width: 767px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.header #global-nav {
+				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular', helvetica, sans-serif;
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+
+			.header #mobile-nav li:nth-child(2) a{
+				border-bottom: 3px solid #000;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
+			}
+
+			.interior-nav {
+				max-width: 350px;
+			}
+
+
+			.content .work {
+				width: 350px;
+				height: 1150px;
+			}
+
+			.content .work-text {
+				width: 350px;
+			}
+
+			.content .work-text .work-overview {
+				width: 350px;
+			}
+
+			.footer {
+				display: block;
+			}
+
+			.footer p {
+				padding-left: 0;
+				line-height: 60px;
+			}
+
+			.footer .social-media {
+				margin: 0 auto;
+			}
+
+			.wechat-bubble{
+	        	bottom: 50px;
+			}
+
+		}
+
+		@media screen and (max-width: 413px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.header #global-nav {
+				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular', helvetica, sans-serif;
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+
+			.header #mobile-nav li:nth-child(2) a{
+				border-bottom: 3px solid #000;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
+			}
+
+			.interior-nav {
+				max-width: 290px;
+			}
+
+
+			.content .work {
+				width: 290px;
+				height: 1000px;
+			}
+
+			.content .work-text {
+				width: 290px;
+			}
+
+			.content .work-text .work-overview {
+				width: 290px;
+			}
+
+			.footer {
+				display: block;
+			}
+
+			.footer p {
+				padding-left: 0;
+				line-height: 60px;
+			}
+
+			.footer .social-media {
+				margin: 0 auto;
+			}
+
+			.wechat-bubble{
+	        	bottom: 50px;
+			}
+
+		}
+	</style>
+	<link rel="shortcut icon" href="./images/icons/favicon.ico" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<span class="logo"><a href="./index.html"><h1>Sophia Tang</h1></a></span>
+			<span class="menu"><img src="./images/icons/menu.svg" onclick="menuclick();"></span>
+			<ul id="global-nav">
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
+			</ul>
+			<ul id="mobile-nav">
+				<img class="close-button" src="./images/icons/close.svg" onclick="closeclick();">
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
+			</ul>
+		</div>
+
+		<div class="interior-nav">
+			<a href="./work-5-YuanJinLines.html"><img src="./images/icons/previous.svg"><p>PREVIOUS</p></a>
+			<a href="./work-7-BlueStack.html"><p>NEXT</p><img src="./images/icons/next.svg"></a>
+		</div>
+
+		<div class="main">
+			<div class="content">
+				<div class="work">
+					<img src="./images/works/work-Host&Guest/Page 6-1.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-2.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-3.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-4.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-5.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-6.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-7.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-8.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-9.png" alt="#">
+					<br>
+					<img src="./images/works/work-Host&Guest/Page 6-10.png" alt="#">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+			</div>
+
+			<div class="back-to-top" onclick ="backtotop();">
+				<img src="./images/icons/back-to-top.svg">
+				<div>Top</div>
+			</div>
+
+			<!-- <div class="footer">
+				<ul class="social-media">
+					<li>
+						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
+					</li>
+					<li>
+						<div class="wechat-bubble"></div>
+						<a href="#"><img class="wechat" src="./images/icons/wechat.svg" target="_blank"/></a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
+					</li>
+				</ul> 
+				<p>All works © Sophia Tang 2017.</p>
+			</div> -->
+		</div>		
+	</div>
+
+	<script type="text/javascript">
+		function backtotop() {
+			window.scroll(0, 0)
+			}
+
+		window.onscroll = function(){
+			if(window.scrollY > (document.body.clientHeight-window.innerHeight-200)) {
+				document.getElementsByClassName('back-to-top')[0].style.opacity = 1;
+			} else {
+				document.getElementsByClassName('back-to-top')[0].style.opacity = 0;
+			}
+		}
+
+	    document.addEventListener('DOMContentLoaded', function (event) {
+	    	init();
+	    });
+
+	    function init() {
+	    	document.querySelector('.wechat').addEventListener('mouseenter', function (e) {
+	    		document.querySelector('.wechat-bubble').style.display = 'block';
+	    	});
+
+	    	document.querySelector('.wechat').addEventListener('mouseleave', function (e) {
+	    		document.querySelector('.wechat-bubble').style.display = 'none';
+	    	});
+	    }
+
+	    function closeclick() {
+	    	document.getElementById('mobile-nav').style.display = 'none';
+	    }
+
+	    function menuclick() {
+	    	document.getElementById('mobile-nav').style.display = 'block';
+	    }
+
+	</script>
+</body>
+</html>

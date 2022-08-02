@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="us-en">
+<head>
+	<meta charset="utf-8" name= "viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Sophia Tang's Portfolio</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-size: 16px;
+			color: #000;
+			font-family:'SourceSansPro-Regular', helvetica;
+			width: 100%;
+			max-width: 1440px;
+			margin: 0 auto;
+		}
+
+		.header {
+			position: fixed;
+			z-index: 100;
+			width: 100%;
+			max-width: 1440px;
+			height: 100px;
+			background-color: #fff;
+			opacity: 0.9;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.header .logo {
+			font-family: 'SourceSansPro-Bold', helvetica;
+			line-height: 100px;
+			padding-left: 140px;
+		}
+
+		.header .logo a{
+			text-decoration: none;
+			color: #000;
+		}
+
+		.header img {
+			display: none;
+		}
+
+		.header #mobile-nav {
+			display: none;
+		}
+
+		.header #global-nav {
+			list-style-type: none;
+			padding-right: 140px;
+		}
+
+		.header #global-nav  li {
+			display: inline-block;
+			height: 100px;
+			line-height: 100px;
+			padding-left: 40px;
+		}
+
+		.header #global-nav li:nth-child(2) a {
+			color: #000;
+			border-bottom: 3px solid #000;
+		}
+
+		.header #global-nav li a {
+			color: #555;
+			text-decoration: none;
+			font-family: 'SourceSansPro-Regular';
+			display: inline-block;
+			height: 70px;
+		}
+
+		.header #global-nav li a:hover {
+			color: #000;
+		}
+
+
+		#popup {
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			z-index: 1000;
+			display: none;
+		}
+
+		#popup .mask {
+			height: 100%;
+			width: 100%;
+			background-color: #000;
+			opacity: 0.7;
+			z-index: 1001;
+		}
+
+		#popup .dialog {
+			position: absolute;
+			top: 100px;
+			left: 30%;
+			width: 40vw;
+			height: 40vw;
+			background-color: #fff;
+			z-index: 1002;
+		}
+
+		#popup .dialog #popup-image {
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+	
+
+		#popup .dialog #dialog-close-button {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			z-index: 1003;
+			cursor: pointer;
+		}
+
+
+		.content {
+			width: 100%;
+			background-color: #fff;
+		}
+
+		.content .images {
+			width: 1160px;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin: 0 auto;
+			padding: 160px 0 60px 0;
+		}
+
+		.content .images .image {
+			width: 360px;
+			height: 360px;
+			margin-bottom: 40px;
+			position: relative;
+		}
+		
+		.image .img-cover {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			opacity: 0;
+			z-index: 3;
+		}
+
+		.image:hover .img-cover {
+			background: #fff;
+			box-shadow: #8C9bA5 0 0 20px 2px;
+			opacity: 0.8;
+			transition: all, 0.6s;
+		}
+
+		.image .image-text {
+			position: absolute;
+			z-index: 4;	
+			opacity: 0;	
+			color: #555;
+			font-size: 32px;
+			text-align: center;
+			width: 100%;
+			top: calc(50% - 40px);
+		}
+
+		.image:hover .image-text {
+			opacity: 1;
+		}
+
+		.image .image-text .image-name {
+			font-family: 'SourceSansPro-Regular';
+		}
+
+		.image .image-text .image-year {
+			font-family: 'SourceSansPro-Light';
+		}
+
+		.image img {
+			width: 360px;
+			height: 360px;
+			position: absolute;
+			z-index: 2;
+		}
+
+		.back-to-top {
+			cursor: pointer;
+			position: fixed;
+			width:70px;
+			height: 70px;
+			border-radius: 35px;
+			background: #f5f7fa;
+			margin: 0 auto;
+			color: #000;
+			text-align: center;
+			line-height: 20px;
+			bottom: 120px;
+			left: calc(50% - 35px);
+			opacity: 0;
+    		transition: all 1s;
+		}
+
+		.back-to-top img {
+			margin-top: 20px;
+		}
+
+		.footer {
+			width: 100%;
+			height: 100px;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+		}
+
+		.footer p {
+			color: #000;
+			font-size: 14px;
+			text-align: center;
+			line-height: 100px;
+			padding-left: 140px;
+		}
+
+		.footer .social-media {
+			width: 240px;
+			display: flex;
+			justify-content: space-between;
+			margin-right: 140px;
+		}
+
+		.footer .social-media li{
+			list-style-type: none;
+			position: relative;
+		}
+
+		.footer .social-media img {
+			padding-top: 34px;
+			width: 32px;
+			height: 32px;
+			opacity: 1;
+		}
+
+		.footer .social-media img:hover {
+			opacity: 0.6;
+		}
+
+		.wechat-bubble{
+	        bottom: 80px;
+    		left: -88px;
+	        position: absolute;
+	        z-index: 999;
+	        width: 200px;
+	        height: 200px;
+	        box-shadow: #8C9bA5 0 0 10px 1px;
+	        transition: all 1s;
+	        background: url("./images/qr code.jpg") no-repeat;
+	        display: none;
+		}
+
+
+		@media screen and (min-width: 1200px) and (max-width: 1439px) {
+			.content .images {
+				width: 1100px;
+			}
+			.content .images .image, .content .images img, .content .images .img-cover {
+				width: 340px;
+				height: 340px;
+			}
+		}
+
+		@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+			.content .images {
+				width: 920px;
+			}
+			.content .images .image, .content .images img, .content .images .img-cover {
+				width: 280px;
+				height: 280px;
+			}
+			#popup .dialog {
+				width: 50vw;
+				height: 50vw;
+				left: 25%;
+			}
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 991px) {
+			.content .images {
+				width: 680px;
+			}
+
+			.content .images .image, .content .images img, .content .images .img-cover {
+				width: 320px;
+				height: 320px;
+			}
+			#popup .dialog {
+				height: 60vw;
+				width: 60vw;
+				left: 20%;
+			}
+		}
+
+		@media screen and (min-width: 414px) and (max-width: 767px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.header #global-nav {
+				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular';
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+
+			.header #mobile-nav li:nth-child(3) a{
+				border-bottom: 3px solid #000;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
+			}
+
+
+			.content .images {
+				width: 350px;
+			}
+
+			.content .images .image, .content .images img, .content .images .img-cover {
+				width: 350px;
+				height: 350px;
+			}
+
+			#popup .dialog {
+				height: 70vw;
+				width: 70vw;
+				left: 15%;
+			}
+
+			.footer {
+				display: block;
+			}
+
+			.footer p {
+				padding-left: 0;
+				line-height: 60px;
+			}
+
+			.footer .social-media {
+				margin: 0 auto;
+			}
+
+			.wechat-bubble{
+	        	bottom: 50px;
+			}
+		}
+
+		@media screen and (min-width: 320px) and ( max-width: 413px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.header #global-nav {
+				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular';
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+
+			.header #mobile-nav li:nth-child(3) a{
+				border-bottom: 3px solid #000;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
+			}
+
+			.content .images {
+				width: 290px;
+			}
+
+			.content .images .image, .content .images img, .content .images .img-cover {
+				width: 290px;
+				height: 290px;
+			}
+
+			#popup .dialog {
+				height: 90vw;
+				width: 90vw;
+				left: 5%;
+			}
+
+			.footer {
+				display: block;
+			}
+
+			.footer p {
+				padding-left: 0;
+				line-height: 60px;
+			}
+
+			.footer .social-media {
+				margin: 0 auto;
+			}
+
+			.wechat-bubble{
+	        	bottom: 50px;
+			}
+		}
+	</style>
+	<link rel="shortcut icon" href="./images/icons/favicon.ico" />
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="header">
+			<span class="logo"><a href="./index.html"><h1>Sophia Tang</h1></a></span>
+			<span class="menu"><img src="./images/icons/menu.svg" ontouchend="menuclick();" onclick="menuclick();"></span>
+			<ul id="global-nav">
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
+			</ul>
+			<ul id="mobile-nav">
+				<img class="close-button" src="./images/icons/close.svg"  onclick="closeclick();">
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
+			</ul>
+		</div>
+
+		<div id="popup">
+			<div class="mask" onclick="dialogclose()"></div>
+			<div class="dialog">
+				<img id="dialog-close-button" src="./images/icons/close_white.svg" alt="" onclick="dialogclose()">
+				<img id="popup-image" src="./images/photos/lg/pic1_lg.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="content">
+
+				<div class="images">
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Hong Kong</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic1_lg.jpg" src="./images/photos/sm/pic1_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">HK PolyU</p>
+							<p class="image-year">2015</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic2_lg.jpg" src="./images/photos/sm/pic2_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Kwun Tong</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic3_lg.jpg" src="./images/photos/sm/pic3_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">HKUST</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic4_lg.jpg" src="./images/photos/sm/pic4_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">HKUST</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic5_lg.jpg" src="./images/photos/sm/pic5_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">HKUST</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic6_lg.jpg" src="./images/photos/sm/pic6_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">The Bund</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic7_lg.jpg" src="./images/photos/sm/pic7_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Lu Jia Zui</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic8_lg.jpg" src="./images/photos/sm/pic8_sm.jpg" alt="">
+					</div>		
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Oriental Pearl Tower</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic9_lg.jpg" src="./images/photos/sm/pic9_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Shanghai</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic10_lg.jpg" src="./images/photos/sm/pic10_sm.jpg" alt="">
+					</div>
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Wuzhen</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic11_lg.jpg" src="./images/photos/sm/pic11_sm.jpg" alt="">
+					</div>	
+
+					<div class='image' onclick="btnclick(this);">
+						<div class="image-text">
+							<p class="image-name">Mercedes-Benz Arena</p>
+							<p class="image-year">2016</p>
+						</div>
+						<div class='img-cover'></div>
+						<img name="pic12_lg.jpg" src="./images/photos/sm/pic12_sm.jpg" alt="">
+					</div>	
+
+				</div>
+		</div>
+
+		<div class="back-to-top" onclick ="backtotop();">
+				<img src="./images/icons/back-to-top.svg">
+				<div>Top</div>
+		</div>
+
+		<div class="footer">
+				<ul class="social-media">
+					<li>
+						<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
+					</li>
+					<li>
+						<div class="wechat-bubble"></div>
+						<a href="#"><img class="wechat" src="./images/icons/wechat.svg" target="_blank"/></a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
+					</li>
+				</ul> 
+				<p>All works © Sophia Tang 2022.</p>
+		</div>
+		</div>		
+	</div>
+
+	<script type="text/javascript">
+		function backtotop() {
+			window.scroll(0, 0)
+			}
+
+		// window.onscroll = function(){
+		// 	if(window.scrollY > 1200) {
+		// 		document.getElementsByClassName('back-to-top')[0].className += ' back-to-top-show';
+		// 	} else {
+		// 		document.getElementsByClassName('back-to-top')[0].className = 'back-to-top';
+		// 	}
+		// }
+
+		window.onscroll = function(){
+			if(window.scrollY > (document.body.clientHeight-window.innerHeight-200)) {
+				document.getElementsByClassName('back-to-top')[0].style.opacity = 1;
+			} else {
+				document.getElementsByClassName('back-to-top')[0].style.opacity = 0;
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', function (event) {
+	    	init();
+	    });
+
+	    function init() {
+	    	document.querySelector('.wechat').addEventListener('mouseenter', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'block';
+	    	});
+
+	    	document.querySelector('.wechat').addEventListener('mouseleave', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'none';
+	    	});
+	    }
+
+	    function closeclick() {
+	    	document.getElementById('mobile-nav').style.display = 'none';
+	    }
+
+	    function menuclick() {
+	    	document.getElementById('mobile-nav').style.display = 'block';
+	    }
+
+	    function btnclick(x){
+	    	var y = x.getElementsByTagName('img')[0];
+	    	if(y){
+	    		var m= document.getElementById('popup-image');
+	    		m.src = "./images/photos/lg/"+y.name;
+	    	}
+	    	document.getElementById("popup").style.display = "block";
+	    }
+
+	    function dialogclose() {
+	    	document.getElementById("popup").style.display = "none";
+	    }
+
+	</script>
+</body>
+</html>

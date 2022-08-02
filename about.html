@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="us-en">
+<head>
+	<meta charset="utf-8">
+	<title>Sophia Tang's Portfolio</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-size: 16px;
+			color: #000;
+			font-family:'SourceSansPro-Regular', helvetica;
+			width: 100%;
+			max-width: 1440px;
+			margin: 0 auto;
+			background: url(./images/leaf2.png) top right;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+
+		.header {
+			position: fixed;
+			z-index: 9999;
+			width: 100%;
+			max-width: 1440px;
+			height: 100px;
+			background-color: #fff;
+			opacity: 0.9;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.header .logo {
+			font-family: 'SourceSansPro-Bold', helvetica;
+			line-height: 100px;
+			padding-left: 140px;
+		}
+
+		.header .logo a{
+			text-decoration: none;
+			color: #000;
+		}
+
+		.header img {
+			display: none;
+		}
+
+		.header #mobile-nav {
+			display: none;
+		}
+
+		.header #global-nav {
+			list-style-type: none;
+			padding-right: 140px;
+		}
+
+		.header #global-nav  li {
+			display: inline-block;
+			height: 100px;
+			line-height: 100px;
+			padding-left: 40px;
+		}
+
+		.header #global-nav li:nth-child(3) a {
+			color: #000;
+			border-bottom: 3px solid #000;
+		}
+
+		.header #global-nav li a {
+			color: #555;
+			text-decoration: none;
+			font-family: 'SourceSansPro-Regular';
+			display: inline-block;
+			height: 70px;
+		}
+
+		.header #global-nav li a:hover {
+			color: #000;
+		}
+
+		.content {
+			width: 100%;
+			margin-bottom: 60px;
+		}
+
+		.content .about {
+			width: 840px;
+			margin: 0 auto;
+		}
+
+		.content .about h1 {
+			padding-top: 120px;
+			line-height: 66px;
+			font-size: 60px;
+			
+		}
+
+		.content .about .personaldiscription{
+			margin: 40px 0 60px 0;
+		}
+
+		.content .about p {
+			margin: 20px 0;
+		}
+
+		.content .about .downloadresume {
+			border: 2px solid #000;
+			color: #000;
+			background: transparent;
+			text-decoration: none;
+			font-size: 16px;
+			font-family: 'SourceSansPro-Regular', helvetica;
+			cursor: pointer;
+			padding: 10px;
+			}
+
+		.content .about .downloadresume:hover {
+			background-color: #000;
+			color: #fff;
+			}
+
+		.footer {
+			width: 100%;
+			height: 100px;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		.footer p {
+			color: #000;
+			font-size: 14px;
+			right: 140px;
+		}
+
+		.footer .social-media {
+			width: 240px;
+			display: flex;
+			justify-content: space-between;
+			left: 140px;
+		}
+
+		.footer .social-media li{
+			list-style-type: none;
+		}
+
+		.footer .social-media img {
+			width: 32px;
+			height: 32px;
+			opacity: 1;
+		}
+
+		.footer .social-media img:hover {
+			opacity: 0.6;
+		}
+
+		.wechat-bubble{
+	        bottom: 80px;
+    		left: -88px;
+	        position: absolute;
+	        z-index: 999;
+	        width: 200px;
+	        height: 200px;
+	        box-shadow: #8C9bA5 0 0 10px 1px;
+	        transition: all 1s;
+	        background: url("./images/qr code.jpg") no-repeat;
+	        display: none;
+		}
+
+		@media screen and (min-width: 1200px) and (max-width: 1439px) {
+			.content .about {
+				width: 720px;
+			}
+		}
+
+		@media screen and (min-width: 992px) and (max-width: 1199px) {
+			.content .about {
+				width: 760px;
+			}
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 991px) {
+			.content .about {
+				width: 560px;
+			}
+		}
+
+		@media screen and (min-width: 414px) and ( max-width: 767px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.header #global-nav {
+				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular';
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+
+			.header #mobile-nav li:nth-child(4) a{
+				border-bottom: 3px solid #000;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
+			}
+
+			.content .about {
+				width: 350px;
+			}
+
+			.footer {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;	
+			}
+
+			.footer .social-media {
+				margin-bottom: 10px;
+			}
+		}
+
+		@media screen and (min-width: 320px) and ( max-width: 413px) {
+			.header .logo {
+				padding-left: 10%;
+			}
+
+			.header #global-nav {
+				display: none;
+			}
+
+			.header #mobile-nav {
+				display: none;
+				list-style-type: none;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				text-align: center;
+				opacity: 0.95;
+				padding-top: 80px;
+				padding-bottom: 30px;
+				box-shadow: #8C9bA5 0 0 10px 1px;
+			}
+
+			.header #mobile-nav li{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+				margin: 0 auto;
+			}
+
+			.header #mobile-nav li a {
+				color: #000;
+				text-decoration: none;
+				font-family: 'SourceSansPro-Regular';
+				font-size: 16px;
+				padding-bottom: 6px;
+			}
+
+			.header #mobile-nav li a:hover {
+				color: #555;
+			}
+
+			.header #mobile-nav li:nth-child(4) a{
+				border-bottom: 3px solid #000;
+			}
+
+			.header img {
+				position: absolute;
+				top: 39.5px;
+				right: 10%;
+				width: 30px;
+				height: 21px;
+				display: block;
+			}
+
+			.header img:hover {
+				opacity: 0.6;
+			}
+
+			.content .about {
+				width: 290px;
+				margin-bottom: 40px;
+			}
+
+			.content {
+				margin-bottom: 40px;
+			}
+
+
+			.footer {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;	
+			}
+
+			.footer .social-media {
+				margin-bottom: 10px;
+			}
+		}
+	</style>
+	<link rel="shortcut icon" href="./images/icons/favicon.ico" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<span class="logo"><a href="./index.html"><h1>Sophia Tang</h1></a></span>
+			<span class="menu"><img src="./images/icons/menu.svg" onclick="menuclick();"></span>
+			<ul id="global-nav">
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
+				<!-- <li><a href="#">CONTECT</a></li> -->
+			</ul>
+			<ul id="mobile-nav">
+				<img class="close-button" src="./images/icons/close.svg" onclick="closeclick();">
+				<li><a href="./index.html">WORKS</a></li>
+				<li><a href="./photos.html">PHOTOS</a></li>
+				<li><a href="./about.html">ABOUT</a></li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="about">
+				<h1 >Hey y'all. <br>Nice to virtually meet you!</h1>
+				<div class="personaldiscription">
+					<p>I’m <b>Sophia Tang</b>, a Shanghai based UX designer with 8+ years working experience across E- commerce, AI-powered IoT and cloud computing. Familiar with native, responsive web and desktop software design. Graduated from Hong Kong Polytechnic University, where I received my Master of Design in Interaction Design.</p>
+
+					<p>Long-term global working experience with good cross-functional colloboration and English communication skills. Experienced in leveraging design methodologies to uncover user needs and generate actionable insights and drive user-centered design from inception to shipping.</p> 
+
+					<p>Sepcialized in design thinking methodology, UX design, user research, visual design, information architecture, usability testing.</p> 
+
+					<p>More information about my career and competencies can be found on my <a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><b>Linkin</b></a> profile.</p>
+
+					<p>If you'd like to discuss a collaboration or any other exciting opportunities, feel free to reach out to me via <b>sophia100084di@163.com</b>.</p>
+				</div>
+
+				<a class="downloadresume" href="./SophiaTang_Resume_EN.pdf" download="SophiaTang_Resume_EN">Download Resume</a>
+			</div>
+		</div>
+
+		<div class="footer">
+			<ul class="social-media">
+				<li>
+					<a href="https://www.behance.net/sophiatang0804" target="_blank"><img src="./images/icons/Behance.svg"></a>
+				</li>
+				<li>
+					<div class="wechat-bubble"></div>
+					<a href="#"><img class="wechat" src="./images/icons/wechat.svg" target="_blank"/></a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/tangyang0804" target="_blank"><img src="./images/icons/Facebook.svg" /></a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/sophiatang0804/" target="_blank"><img src="./images/icons/Instagram.svg" /></a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/yang-sophia-tang-3b163b85/" target="_blank"><img src="./images/icons/Linkedin.svg" /></a>
+				</li>
+			</ul> 
+			<p>All works © Sophia Tang 2022.</p>
+		</div>	
+	</div>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function (event) {
+	    	init();
+	    });
+
+	    function init() {
+	    	document.querySelector('.wechat').addEventListener('mouseenter', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'block';
+	    	});
+
+	    	document.querySelector('.wechat').addEventListener('mouseleave', function (e) {
+	    		// e.stopPropagation();
+	    		document.querySelector('.wechat-bubble').style.display = 'none';
+	    	});
+	    }
+
+	    function closeclick() {
+	    	document.getElementById('mobile-nav').style.display = 'none';
+	    }
+
+	    function menuclick() {
+	    	document.getElementById('mobile-nav').style.display = 'block';
+	    }
+	</script>
+</body>
+</html>
